@@ -22,7 +22,7 @@ This project was developed for Qtec Solution Limited’s job assignment. It uses
 ![Login Page](screenshots/login-page.png)
 
 ### 📋 Chart of Accounts
-![COA](screenshots/coa-page.png)
+![COA](screenshots/chart-of-accounts-page.png)
 
 ### 🧾 Voucher Entry
-![Voucher Entry](screenshots/voucher-entry.png)
+![Voucher Entry](screenshots/voucher-entry-page.png)
