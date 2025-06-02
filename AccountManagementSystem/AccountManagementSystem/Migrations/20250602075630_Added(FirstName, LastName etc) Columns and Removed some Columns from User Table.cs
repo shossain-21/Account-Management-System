@@ -41,37 +41,6 @@ namespace AccountManagementSystem.Migrations
 
 
 
-            migrationBuilder.DropColumn(
-                name: "EmailConfirmed",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "SecurityStamp",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "ConcurrencyStamp",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumberConfirmed",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "TwoFactorEnabled",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnd",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnabled",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "AccessFailedCount",
-                table: "AspNetUsers");
         }
 
         /// <inheritdoc />
