@@ -7,7 +7,7 @@ This project was developed for Qtec Solution Limited’s job assignment. It uses
 - User authentication with custom roles (Admin, Accountant, Viewer)
 - Chart of Accounts (COA) management
 - Voucher entry system
-- Stored procedure-based backend (no LINQ/EF queries)
+- Stored procedure-based backend (no LINQ)
 
 ## Primary Technologies Used
 
