@@ -19,10 +19,10 @@ This project was developed for Qtec Solution Limited’s job assignment. It uses
 ## Screenshots
 
 ### 🔐 Login Page
-![Login Page](screenshots/login-page.jpg)
+![Login Page (Sample Image)](screenshots/login-page.jpg)
 
 ### 📋 Chart of Accounts
-![COA](screenshots/chart-of-accounts-page.png)
+![COA (Sample Image)](screenshots/chart-of-accounts-page.png)
 
 ### 🧾 Voucher Entry
-![Voucher Entry](screenshots/voucher-entry-page.png)
+![Voucher Entry (Sample Image)](screenshots/voucher-entry-page.png)
