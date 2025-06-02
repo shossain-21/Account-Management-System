@@ -27,10 +27,12 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 
 
 ## Key Features
+<<<<<<< .mine
 - User Roles: Admin, Accountant, Viewer — with custom access.
 - Chart of Accounts: Hierarchical parent-child account structure.
 - Voucher Entry: Journal, Payment, and Receipt voucher support.
 - Stored Procedure Only: No LINQ.
+
 
 ## Primary Technologies Used
 
