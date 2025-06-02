@@ -19,7 +19,7 @@ This project was developed for Qtec Solution Limited’s job assignment. It uses
 ## Screenshots
 
 ### 🔐 Login Page
-![Login Page](screenshots/login-page.png)
+![Login Page](screenshots/login-page.jpg)
 
 ### 📋 Chart of Accounts
 ![COA](screenshots/chart-of-accounts-page.png)
