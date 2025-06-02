@@ -52,3 +52,33 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# IIS Express
+.vs/
+
+# DotNet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Logs
+*.log
+
+# Web-specific
+wwwroot/lib/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files (only ignore if you're not committing configs)
+*.env
+
+# Visual Studio index/cache files
+*.vsidx
+
+# SQLite temporary DB files
+*.db-shm
+*.db-wal
