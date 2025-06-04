@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\user.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\user.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\user.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +42,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 27,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Logout.cshtml.cs",
-              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
-              "RelativeDocumentMoniker": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
-              "RelativeToolTip": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T11:18:14.164Z",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T07:21:18.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Index.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Index.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:58:20.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Logout.cshtml",
-              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "RelativeDocumentMoniker": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "RelativeToolTip": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:18:10.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Shared\\_LoginPartial.cshtml",
               "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_LoginPartial.cshtml",
               "RelativeToolTip": "AccountManagementSystem\\Pages\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwA4AAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAADAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T15:57:10.316Z",
+              "WhenOpened": "2025-06-04T07:10:22.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cshtml.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\User.cshtml.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\User.cshtml.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\User.cshtml.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\User.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T06:45:32.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\User.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\User.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\User.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\User.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T06:43:48.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "AccountManagementSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-04T18:43:23.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Program.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Program.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T18:46:15.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-04T19:18:07.212Z",
               "EditorCaption": ""
             }
           ]

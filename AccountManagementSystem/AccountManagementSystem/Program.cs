@@ -2,11 +2,19 @@ using AccountManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using AccountManagementSystem.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeFolder("/");
+    options.Conventions.AllowAnonymousToPage("/Identity/Account/Login");
+    options.Conventions.AllowAnonymousToPage("/Account/AccessDenied");
+    options.Conventions.AddPageRoute("/Home/Index", "/");
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -17,13 +25,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddDefaultIdentity<AccountUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<AppDbContext>();
 
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+//{
+//    options.LoginPath = "/Identity/Account/Login/";
+//    options.AccessDeniedPath = "/Account/AccessDenied";
+//});
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
