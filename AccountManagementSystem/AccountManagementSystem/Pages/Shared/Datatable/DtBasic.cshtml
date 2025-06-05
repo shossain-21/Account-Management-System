@@ -1,0 +1,271 @@
+﻿<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net/dataTables.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-bs5/dataTables.bootstrap5.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/buttons.bootstrap5.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/jszip/jszip.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/pdfmake/pdfmake.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/pdfmake/vfs_fonts.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/buttons.html5.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/buttons.flash.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/buttons.print.min.js"></script>
+<script asp-append-version="true" type="text/javascript" src="~/plugins/datatables/datatables.net-buttons/buttons.colVis.min.js"></script>
+<script type="text/javascript">
+    const buttons = [];
+
+    const includeCopyButton = typeof dtCopy === 'undefined';
+    if (includeCopyButton == true) {
+        buttons.push({
+            extend: 'copy',
+            className: "btn-copy btn-dark btn-sm"
+        });
+    }
+
+    const includeExcelButton = typeof dtExcel === 'undefined';
+    if (includeExcelButton == true) {
+        buttons.push({
+            extend: 'excelHtml5',
+            className: "btn-excel btn-primary btn-sm",
+            exportOptions: {
+                columns: ':visible'
+            }
+        });
+    }
+
+    const includeCustomExcelButton = typeof custom_Excel === 'undefined';
+    if (includeCustomExcelButton == false) {
+        buttons.push({
+            text: 'Excel',
+            className: "btn-primary btn-sm",
+            action: function (e, dt, node, config) {
+                var $this = $(node);
+                custom_Excel($this);
+            }
+        });
+    }
+
+    const includeColVisButton = typeof dtVisibility === 'undefined';
+    if (includeColVisButton == true) {
+        buttons.push({
+            extend: 'colvis',
+            className: "btn-colvis btn-success btn-sm",
+            columns: ':gt(0)'
+        });
+    }
+
+    const includePrintButton = typeof pop_print === 'undefined';
+    if (includePrintButton == false) {
+        buttons.push({
+            text: 'Print',
+            className: "btn-dark btn-sm",
+            action: function (e, dt, node, config) {
+                var $this = $(node);
+                pop_print($this);
+                //$this.parent().parent().parent().next().next().find('.table-parent .dataTables_scrollBody table').prop('outerHTML');
+            }
+        });
+    }
+
+    const options = {};
+    options.dom = "" +
+        "<'row mt-2 justify-content-between'<'d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto'B<'d-inline-flex'l>><'d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto insertSerch'f>>" +
+        "<'row mt-2 justify-content-between dt-layout-table'<'px-0 d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md table-parent'tr>>" +
+        "<'row mt-2 justify-content-between'<'d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto'i><'d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto'p>>";
+    options.responsive = true;
+    options.order = [];
+    options.language = {
+        paginate: {
+            previous: "<i class='fas fa-angle-left'>",
+            next: "<i class='fas fa-angle-right'>",
+        }
+    };
+    options.lengthMenu = [[10, 25, 50, -1], [10, 25, 50, "All"]];
+    options.autoWidth = false;
+    options.stateSave = true;
+    options.stateLoaded = function (settings, data) {
+        var table = $(this).DataTable();
+        //const colSearchState = typeof dtColSearch === 'undefined';
+        //if (colSearchState == true) {
+        //    for (var i = 0; i < data.columns.length; i++) {
+        //        var columnData = data.columns[i];
+        //        var searchValue = columnData.search.search;
+
+        //        if (searchValue) {
+        //            table.column(i).search('').draw();
+        //        }
+        //    }
+        //}
+
+        const includestateLoaded = typeof stateLoadedFunc === 'undefined';
+        if (includestateLoaded == false) {
+            stateLoadedFunc(table, data);
+        }
+
+        // Set Last Page if Old Page Number is Greater
+        const includePaging = typeof dtPaging === 'undefined';
+        if (includePaging != false) {
+            var currentPage = $(this).DataTable().page.info().page;
+            localStorage.setItem('dt-currentPage', currentPage)
+        }
+    }
+    options.stateDuration = 60 * 60 * 24 * 365;
+    options.stateSaveParams = function (settings, data) {
+        delete data.order;
+    };
+    options.processing = true;
+    options.buttons = buttons;
+    options.columnDefs = [
+        {
+            targets: "no-sort",
+            orderable: false
+        },
+        {
+            targets: "no-search",
+            searchable: false
+        }
+    ];
+    options.initComplete = function (settings, json) {
+        var $this = this.api();
+        $('.dt-bootstrap4').parent().removeClass("table-responsive");
+
+        $(".dt-buttons .btn-secondary").removeClass("btn-secondary");
+
+        let searchDelay;
+        let searchInput = $($this.table().container()).find('div.dataTables_filter input');
+        searchInput.unbind().bind('input', function (e) {
+            clearTimeout(searchDelay);
+            searchDelay = setTimeout(function () {
+                $this.search(searchInput.val()).draw();
+            }, 500);
+        });
+
+        const colSearchState = typeof dtColSearch === 'undefined';
+        if (colSearchState == false) {
+            var header = $($this.table().header());
+            var $searchRow = $('<tr class="search-row d-none"></tr>');
+            $this.columns().every(function (colIndex) {
+                let column = this;
+                let $headerCell = $(column.header());
+                let $newTh = $('<th></th>');
+                if ($headerCell.hasClass('no-search')) {
+                    $newTh.empty();
+                } else {
+                    let input = document.createElement('input');
+                    input.placeholder = 'Search...';
+                    input.className = 'form-control-sm border-0 border-radius-0 w-100';
+                    $newTh[0].replaceChildren(input);
+                    input.addEventListener('keyup', () => {
+                        if (column.search() !== input.value) {
+                            column.search(input.value).draw();
+                        }
+                    });
+                }
+                $searchRow.append($newTh);
+            });
+            header.append($searchRow);
+            var searchInputs = [];
+            $searchRow.find('th').each(function (colIndex) {
+                var inputElement = $(this).find('input')[0];
+                if (inputElement) {
+                    searchInputs[colIndex] = inputElement;
+                } else {
+                    searchInputs[colIndex] = null;
+                }
+            });
+            $searchRow.removeClass("d-none");
+            var state = $this.state.loaded();
+            if (state) {
+                $this.columns().every(function (colIndex) {
+                    var columnState = state.columns[colIndex];
+                    var searchValue = columnState.search.search;
+                    if (searchValue && searchInputs[colIndex]) {
+                        searchInputs[colIndex].value = searchValue;
+                    }
+                });
+            }
+        }
+
+        const includeinitComplete = typeof initCompleteFunc === 'undefined';
+        if (includeinitComplete == false) {
+            initCompleteFunc($this);
+        }
+
+        // Set Last Page if Old Page Number is Greater
+        const includePaging = typeof dtPaging === 'undefined';
+        if (includePaging != false) {
+            var currentPage = localStorage.getItem('dt-currentPage');
+            currentPage = (currentPage !== null && currentPage !== "") ? parseInt(currentPage, 10) : 0;
+
+            var rows = $(this).DataTable().rows().data().length;
+            var pageSize = $(this).DataTable().page.info().length;
+            var maxValidPage = Math.ceil(rows / pageSize) - 1;
+
+            if (currentPage > maxValidPage) {
+                currentPage = maxValidPage;
+            }
+
+            $(this).DataTable().page(currentPage).draw('page');
+        }
+    };
+    options.drawCallback = function (settings) {
+        const includedrawCallback = typeof drawCallbackFunc === 'undefined';
+        if (includedrawCallback == false) {
+            drawCallbackFunc();
+        }
+    };
+    options.footerCallback = function (row, data, start, end, display) {
+        const includefooterDrawCallback = typeof footerDrawCallbackFunc === 'undefined';
+        if (includefooterDrawCallback == false) {
+            var $this = this.api();
+            footerDrawCallbackFunc($this);
+        }
+    };
+
+    const includeinfoCallbackFunc = typeof infoCallbackFunc === 'undefined';
+    if (includeinfoCallbackFunc == false) {
+        options.infoCallback = function (settings, start, end, total, pre) {
+            var $this = this.api();
+            var modifiedInfoString = infoCallbackFunc($this, total);
+            return modifiedInfoString;
+        };
+    }
+
+    const orderState = typeof dtOrdering === 'undefined';
+    if (orderState == false) {
+        options.ordering = true;
+    }
+    else {
+        options.ordering = false;
+    }
+
+    const searchState = typeof dtSearching === 'undefined';
+    if (searchState == false) {
+        options.searching = false;
+    }
+
+    const includeSearchPlaceHolder = typeof dtSearchPlaceholder === 'undefined';
+    if (includeSearchPlaceHolder == false) {
+        options.language = {
+            searchPlaceholder: dtSearchPlaceholder
+        }
+    }
+
+    // Not exist in DtBasicFixed
+    const includePaging = typeof dtPaging === 'undefined';
+    if (includePaging == false) {
+        options.paging = false;
+    }
+
+    const includeInfo = typeof dtInfo === 'undefined';
+    if (includeInfo == false) {
+        options.info = false;
+    }
+
+    var table = $('[data-toggle="datatables"]').DataTable(options);
+    //table.on('column-visibility.dt', function (e, settings, column, state) {
+    //    var elmt = $("tbody tr:first-child td:first-child, tbody tr:last-child td:first-child, tbody tr:nth-last-child(2) td:first-child");
+    //    var colspan = elmt.prop("colSpan");
+    //    colspan = (state ? (colspan + 1) : (colspan - 1));
+    //    elmt.prop("colSpan", colspan);
+    //});
+    //table.draw();
+</script>

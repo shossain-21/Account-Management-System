@@ -1,4 +1,5 @@
-﻿using AccountManagementSystem.Models;
+﻿using AccountManagementSystem.Models.Accounts;
+using AccountManagementSystem.Models.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -40,5 +41,7 @@ namespace AccountManagementSystem.Services
 
             builder.Entity<IdentityRole>().HasData(admin, accountant, viewer);
         }
+
+        public DbSet<Control> AspNetControls { get; set; }
     }
 }

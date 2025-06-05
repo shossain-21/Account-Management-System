@@ -1,8 +1,8 @@
 using AccountManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using AccountManagementSystem.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using AccountManagementSystem.Models.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,0 +1,18 @@
+﻿<script type="text/javascript">
+    var appVersion = "1.0.1";
+    function pop_print_generic(headerClass, bodyClass, style) {
+        var header = $(headerClass).html();
+        var main_content = $(bodyClass).html();
+
+        w = window.open(null, 'Print_Page', 'scrollbars=yes');
+        // Append the version number
+        w.document.write('<link rel="stylesheet" type="text/css" href="/css/_windowPrint.css?' + appVersion + '" />');
+        w.document.write("<style>" + style + "</style>");
+        w.document.write(header + main_content);
+        w.document.title = "@ViewData["Title"]";
+        w.document.close();
+        w.focus();
+        setTimeout(function () { w.print(); }, 1000);
+        return true;
+    }
+</script>
