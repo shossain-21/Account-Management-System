@@ -16,7 +16,7 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
             _context = context;
         }
 
-        public List<Control> Control { get; set; }
+        public required List<Control> Control { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -27,8 +27,24 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
 
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            await _context.Database.ExecuteSqlRawAsync("EXEC DeleteControl @p0", id);
-            return RedirectToPage();
+            var connection = _context.Database.GetDbConnection();
+
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "sp_DeleteAspNetControl";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                var idParam = command.CreateParameter();
+                idParam.ParameterName = "@Id";
+                idParam.Value = id;
+                command.Parameters.Add(idParam);
+
+                await connection.OpenAsync();
+                await command.ExecuteNonQueryAsync();
+                await connection.CloseAsync();
+            }
+
+            return RedirectToPage("Index");
         }
 
     }

@@ -33,6 +33,6 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
         }
 
         [BindProperty]
-        public Control Control { get; set; }
+        public required Control Control { get; set; }
     }
 }

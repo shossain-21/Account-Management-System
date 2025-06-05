@@ -1,0 +1,57 @@
+﻿@page "{id}"
+@model AccountManagementSystem.Pages.Accounts.Controls.EditModel
+@using AccountManagementSystem.Models.Accounts
+
+@{
+    ViewData["Title"] = "Edit Control";
+}
+
+<div class="mt-4">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Control.Id" />
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col m-auto"><p class="mb-0 fw-bold fs-3">@ViewData["Title"]</p></div>
+                            @* <div class="col text-end">
+                            <button type="button" onclick="window.history.go(-1); return false;" class="btn btn-sm btn-warning"><i class="fa fa-chevron-left me-1"></i>Back</button>
+                        </div> *@
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="Control.Code" class="form-control" placeholder="Control Code">
+                                    <label>Control Code</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="Control.Name" class="form-control" placeholder="Control Name">
+                                    <label>Control Name</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="button" onclick="window.history.go(-1); return false;" class="btn btn-primary px-4 py-2 rounded">
+                                <i class="fa fa-chevron-left me-0"></i>Back
+                            </button>
+                            <button type="submit" class="btn btn-primary px-4 py-2 rounded">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
