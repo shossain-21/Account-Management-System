@@ -6,9 +6,11 @@ namespace AccountManagementSystem.Models.Accounts
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string Code { get; set; }
-        [Required]
-        public string Name { get; set; }
+
+        public required string Code { get; set; }
+        
+        public required string Name { get; set; }
+
+        public required List<SubSidiary> SubSidiaries { get; set; }
     }
 }

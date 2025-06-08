@@ -20,7 +20,7 @@ namespace AccountManagementSystem.Services
 
             var admin = new IdentityRole
             {
-                Id = "1", // Hardcoded ID
+                Id = "1",
                 Name = "admin",
                 NormalizedName = "ADMIN"
             };
@@ -43,5 +43,7 @@ namespace AccountManagementSystem.Services
         }
 
         public DbSet<Control> AspNetControls { get; set; }
+
+        public DbSet<SubSidiary> AspNetSubSidiaries { get; set; }
     }
 }

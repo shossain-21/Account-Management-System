@@ -1,4 +1,9 @@
 ﻿@using AccountManagementSystem.Pages.Accounts.Controls;
+@using Microsoft.AspNetCore.Identity
+@using AccountManagementSystem.Models.Users;
+
+@inject SignInManager<AccountUser> SignInManager
+@inject UserManager<AccountUser> UserManager
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +27,56 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="coaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Chart of Accounts
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="coaDropdown">
-                                <li><a class="dropdown-item" asp-page="/Accounts/Controls/Create">Create Controls</a></li>
-                                <li><a class="dropdown-item" asp-page="/Accounts/Controls/Index">View Controls</a></li>
-                                <!-- Add more items as needed -->
-                            </ul>
-                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            if (User.IsInRole("admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" id="coaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Chart of Accounts
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="coaDropdown">
+
+                                        <!-- Control Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-grid-2 me-2"></i>Control</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Controls/Create">Add Control</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Controls/Index">View Controls</a></li>
+
+                                        <li><hr class="dropdown-divider" /></li>
+
+                                        <!-- Sub-Sidiary Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-grid me-2"></i>Sub-Sidiary</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Create">Add Sub-Sidiary</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Index">View Sub-Sidiaries</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                            else if (User.IsInRole("accountant"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                </li>
+                            }
+                            else if (User.IsInRole("viewer"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                </li>
+                            }
+                        }
 
                     </ul>
                     <partial name="_LoginPartial" />

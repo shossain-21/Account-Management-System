@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\subsidiaries\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\subsidiaries\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\controls\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\controls\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\subsidiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\subsidiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\subsidiaries\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\subsidiaries\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\controls\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\controls\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\subsidiaries\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\subsidiaries\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\services\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 28,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,41 +130,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T14:09:11.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Services\\AppDbContext.cs",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Services\\AppDbContext.cs",
               "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Services\\AppDbContext.cs",
               "RelativeToolTip": "AccountManagementSystem\\Services\\AppDbContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T09:52:20.247Z",
+              "WhenOpened": "2025-06-08T14:26:20.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "SubSidiary.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T15:50:10.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Create.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Create.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Create.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T15:59:54.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T18:46:20.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml.cs",
               "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml.cs",
               "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T09:52:33.99Z",
+              "WhenOpened": "2025-06-08T18:48:45.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\SubSidiaries\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwC8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T18:44:16.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAmwCcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T19:04:47.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
-              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml*",
-              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Controls\\Index.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAB0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T09:41:39.818Z",
+              "Title": "Control.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\Control.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Models\\Accounts\\Control.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\Control.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\Control.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:19:44.512Z",
               "EditorCaption": ""
             }
           ]

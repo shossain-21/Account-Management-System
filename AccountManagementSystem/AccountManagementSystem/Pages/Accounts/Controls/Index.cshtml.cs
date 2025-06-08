@@ -16,11 +16,11 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
             _context = context;
         }
 
-        public required List<Control> Control { get; set; }
+        public required List<Control> Controls { get; set; }
 
         public async Task OnGetAsync()
         {
-            Control = await _context.AspNetControls
+            Controls = await _context.AspNetControls
                 .FromSqlRaw("EXEC spGetAllControls")
                 .ToListAsync();
         }

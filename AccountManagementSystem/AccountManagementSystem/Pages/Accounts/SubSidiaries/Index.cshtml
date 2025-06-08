@@ -1,9 +1,9 @@
 ﻿@page
-@model AccountManagementSystem.Pages.Accounts.Controls.IndexModel
+@model AccountManagementSystem.Pages.Accounts.SubSidiaries.IndexModel
 @using AccountManagementSystem.Models.Accounts
 
 @{
-    ViewData["Title"] = "Controls";
+    ViewData["Title"] = "Sub-Sidiaries";
 }
 
 @section Css {
@@ -12,16 +12,15 @@
     </style>
 }
 
-
 <div class="mt-4">
     <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col m-auto"><p class="mb-0 fw-bold fs-3">@ViewData["Title"]</p></div>
+                        <div class="col m-auto"><p class="mb-0 fw-bold">@ViewData["Title"]</p></div>
                         <div class="col text-end">
-                            <a asp-page="/Accounts/Controls/Create" class="btn btn-sm btn-primary"><i class="fa fa-plus me-1"></i>New</a>
+                            <a asp-page="/Accounts/SubSidiaries/Create" class="btn btn-sm btn-primary"><i class="fa fa-plus me-1"></i>New</a>
                         </div>
                     </div>
                 </div>
@@ -31,9 +30,11 @@
                             <thead class="thead-dark text-center">
                                 <tr>
                                     <th class="no-search serial" style="width: 5%;">S/N</th>
-                                    <th class="serial" style="width: 15%;">Code</th>
-                                    <th style="width: 50%;">Name</th>
-                                    <th class="no-search print-hide action" style="width: 30%;">Action</th>
+                                    <th class="serial" style="width: 10%;">Code</th>
+                                    <th style="width: 30%;">Sub-Group Name</th>
+                                    <th style="width: 10%;">Group Code</th>
+                                    <th style="width: 30%;">Group Name</th>
+                                    <th class="no-search print-hide action" style="width: 15%;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,12 +42,14 @@
                                     int i = 0;
                                 }
 
-                                @foreach (var item in Model.Controls)
+                                @foreach (var item in Model.SubSidiaries)
                                 {
                                     <tr>
-                                        <td class="serial text-start">@(++i)</td>
+                                        <td class="serial">@(++i)</td>
                                         <td class="text-start">@item.Code</td>
                                         <td class="text-start">@item.Name</td>
+                                        <td class="text-start">@item.ControlCode</td>
+                                        <td class="text-start"> @item.ControlName</td>
                                         <td class="action print-hide text-end">
                                             <div class="btn-group gap-3">
                                                 <a class="btn btn-sm btn-primary px-4 py-2 rounded" asp-page="Edit" asp-route-id="@item.Id">Edit</a>
@@ -65,7 +68,6 @@
         </div>
     </div>
 </div>
-
 
 @section Scripts {
     <script type="text/javascript">
