@@ -13,6 +13,7 @@
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     @RenderSection("Css", required: false)
 </head>
 <body>
@@ -31,15 +32,16 @@
                         {
                             if (User.IsInRole("admin"))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="far fa-memo-pad me-2"></i><span>Journal Voucher</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="1">Add Journal Voucher</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="1">View Journal Vouchers</a></li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-dark" href="#" id="coaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Chart of Accounts
+                                    <a class="nav-link dropdown-toggle" href="#" id="coaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-list-alt me-2"></i>Chart of Accounts
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="coaDropdown">
 

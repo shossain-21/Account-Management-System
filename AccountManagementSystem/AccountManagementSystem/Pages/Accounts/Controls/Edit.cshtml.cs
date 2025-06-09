@@ -64,6 +64,6 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
 
 
         [BindProperty]
-        public required Control Control { get; set; }
+        public Control? Control { get; set; }
     }
 }

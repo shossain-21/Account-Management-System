@@ -1,0 +1,83 @@
+﻿@page "{id}"
+@model AccountManagementSystem.Pages.Accounts.SubSidiaries.EditModel
+@using AccountManagementSystem.Models.Accounts
+@using Models._Utilities
+
+@{
+    ViewData["Title"] = "Edit Sidiary";
+}
+
+<div class="mt-4">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="SubSidiary.Id" />
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col m-auto"><p class="mb-0 fw-bold">@ViewData["Title"]</p></div>
+                            <div class="col text-end">
+                                <button type="button" onclick="window.history.go(-1); return false;" class="btn btn-sm btn-warning"><i class="fa fa-chevron-left me-1"></i>Back</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-floating">
+                                    <select autocomplete="off" asp-for="SubSidiary.ControlId" class="form-select" data-toggle="select">
+                                        @foreach (var item in Model.Controls)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </select>
+                                    <label>Select Control</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="SubSidiary.Code" class="form-control" placeholder="Sub-Sidiary Code">
+                                    <label>Sub-Sidiary Code</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="SubSidiary.Name" class="form-control" placeholder="Sub-Sidiary Name">
+                                    <label>Sub-Sidiary Name</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <hr />
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="SubSidiary.OpeningDr" class="form-control" placeholder="Opening Debit" onchange="numberToComma($(this))" value="@Model.SubSidiary.OpeningDr.FixNumber()">
+                                    <label>Opening Debit</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-floating">
+                                    <input autocomplete="off" asp-for="SubSidiary.OpeningCr" class="form-control" placeholder="Opening Credit" onchange="numberToComma($(this))" value="@Model.SubSidiary.OpeningCr.FixNumber()">
+                                    <label>Opening Credit</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-lg-12">
+                            <input autocomplete="off" type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
