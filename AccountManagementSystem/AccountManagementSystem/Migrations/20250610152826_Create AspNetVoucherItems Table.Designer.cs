@@ -4,6 +4,7 @@ using AccountManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccountManagementSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250610152826_Create AspNetVoucherItems Table")]
+    partial class CreateAspNetVoucherItemsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +43,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AspNetControls", (string)null);
+                    b.ToTable("AspNetControls");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.SubSidiary", b =>
@@ -72,7 +75,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasIndex("ControlId");
 
-                    b.ToTable("AspNetSubSidiaries", (string)null);
+                    b.ToTable("AspNetSubSidiaries");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.Voucher", b =>
@@ -108,7 +111,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AspNetVouchers", (string)null);
+                    b.ToTable("AspNetVouchers");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.VoucherItem", b =>
@@ -145,7 +148,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasIndex("VoucherId");
 
-                    b.ToTable("AspNetVoucherItems", (string)null);
+                    b.ToTable("AspNetVoucherItems");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Users.AccountUser", b =>

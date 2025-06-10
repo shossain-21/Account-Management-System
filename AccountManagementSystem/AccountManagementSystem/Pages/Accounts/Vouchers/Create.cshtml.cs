@@ -40,14 +40,11 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
         {
              if (!ModelState.IsValid)
             {
-                // Re-populate VoucherTypeName if returning to page on validation error
                 Voucher.VoucherTypeName = _voucherHelper.GetVoucherTypeName(Voucher.VoucherTypeId);
                 return Page();
             }
 
             var chequeDateValue = Voucher.ChequeDate == DateTime.MinValue ? (object)DBNull.Value : Voucher.ChequeDate;
-
-            // Similarly for VoucherDate if it's not nullable and can be DateTime.MinValue.
             var voucherDateValue = Voucher.VoucherDate == DateTime.MinValue ? (object)DBNull.Value : Voucher.VoucherDate;
 
             var bankParam = new SqlParameter("@Bank", (object?)Voucher.Bank ?? DBNull.Value);
@@ -72,7 +69,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
             int insertedId = (int)insertedIdParam.Value;
 
             // Redirect to Edit page
-            return RedirectToPage("./Create", new { id = insertedId });
+            return RedirectToPage("./Edit", new { id = insertedId });
         }
 
 

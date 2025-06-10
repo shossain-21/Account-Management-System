@@ -47,5 +47,7 @@ namespace AccountManagementSystem.Services
         public DbSet<SubSidiary> AspNetSubSidiaries { get; set; }
 
         public DbSet<Voucher> AspNetVouchers { get; set; }
+
+        public DbSet<VoucherItem> AspNetVoucherItems { get; set; }
     }
 }

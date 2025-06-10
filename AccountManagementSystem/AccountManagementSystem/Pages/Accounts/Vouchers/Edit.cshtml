@@ -1,0 +1,444 @@
+﻿@page "{id}"
+@model AccountManagementSystem.Pages.Accounts.Vouchers.EditModel
+@* Assuming Models._Infrastructure contains FixDate() or similar helpers if you need them.
+   If not, remove the @using and rely on standard .NET formatting for dates. *@
+@using Models._Utilities
+
+@{
+    ViewData["Title"] = "Edit " + Model.VoucherTypeName;
+}
+
+@section Css {
+    <link asp-append-version="true" rel="stylesheet" type="text/css" href="~/plugins/jquery-ui/jquery-ui.min.css" />
+    <style type="text/css">
+        .table .title {
+            width: 100px;
+        }
+
+        /* Increased width for control/subsidiary dropdowns for better visibility */
+        .td-control, .td-subsidiary {
+            width: 250px; /* Adjust as needed */
+        }
+
+        .table input.form-control,
+        .table select.form-control {
+            height: calc(1.5em + 0.5rem + 2px); /* Adjust height to match input size */
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem; /* Smaller font size for table inputs */
+        }
+
+        /* Ensure the delete icon button is visible and properly styled */
+        .table .btn-danger {
+            padding: 0.25rem 0.5rem; /* Smaller padding for button in table */
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+        }
+    </style>
+}
+
+<div class="mt-4">
+    <form id="mainForm" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Voucher.Id" />
+        <input type="hidden" asp-for="Voucher.VoucherTypeId" />
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col m-auto"><p class="mb-0 fw-bold">@ViewData["Title"]</p></div>
+                            <div class="col text-end"><button type="button" onclick="window.history.go(-1); return false;" class="btn btn-sm btn-warning"><i class="fa fa-chevron-left me-1"></i>Back</button></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr class="text-center">
+                                        <th colspan="2">Voucher Information</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Date <span class="text-danger">*</span></td>
+                                        <td class="p-1"><input asp-for="Voucher.VoucherDate" class="form-control datepicker" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Reference No <span class="text-danger">*</span></td>
+                                        <td class="p-1">
+                                            <input autocomplete="off" asp-for="Voucher.VoucherNo" class="form-control" />
+                                            <span asp-validation-for="Voucher.VoucherNo" class="text-danger"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Title</td>
+                                        <td class="p-1"><input autocomplete="off" asp-for="Voucher.Title" class="form-control" /></td>
+                                    </tr>
+                                    @* <tr>
+                                    <td class="title">On Acc.</td>
+                                    <td class="p-1"><input autocomplete="off" asp-for="AccVoucher.OnAccount" class="form-control" /></td>
+                                </tr> *@
+                                    @if (Model.Voucher.VoucherTypeId == 4 || Model.Voucher.VoucherTypeId == 5)
+                                    {
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Cheque/DD,PO</td>
+                                            <td class="p-1"><input autocomplete="off" asp-for="Voucher.ChequeNo" class="form-control" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Cheque Date</td>
+                                            <td class="p-1"><input asp-for="Voucher.ChequeDate" class="form-control datepicker" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Bank</td>
+                                            <td class="p-1"><input autocomplete="off" asp-for="Voucher.Bank" class="form-control" /></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-lg-12 text-center">
+                            <button id="submitForm" type="button" class="btn btn-primary">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Re-integrated Voucher Items section directly into the main form *@
+        <div class="card mt-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col m-auto"><p class="mb-0 fw-bold">Voucher Items</p></div>
+                    <div class="col text-end"><button type="button" id="addNewItem" class="btn btn-sm btn-success"><i class="fa fa-plus me-1"></i>Add Entry</button></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="voucherItemsTable" class="table align-items-center table-hover table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="width: 5%;">S/N</th>
+                                <th style="width: 25%;">Control</th>
+                                <th style="width: 25%;">Sub-Sidiary</th>
+                                <th style="width: 20%;">Description</th>
+                                @if (Model.Voucher.VoucherTypeId == 1)
+                                {
+                                    <th style="width: 10%;" class="debit-column">Debit</th>
+                                    <th style="width: 10%;" class="credit-column">Credit</th>
+                                }
+                                else if (Model.Voucher.VoucherTypeId == 2 || Model.Voucher.VoucherTypeId == 4)
+                                {
+                                    <th style="width: 20%;" class="debit-column">Debit</th>
+                                }
+                                else if (Model.Voucher.VoucherTypeId == 3 || Model.Voucher.VoucherTypeId == 5)
+                                {
+                                    <th style="width: 20%;" class="credit-column">Credit</th>
+                                }
+                                <th style="width: 5%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.VoucherItems != null && Model.VoucherItems.Any())
+                            {
+                                @for (int i = 0; i < Model.VoucherItems.Count; i++)
+                                {
+                                    <tr class="voucher-item-row">
+                                        <td>@(i + 1)</td>
+                                        <td>
+                                            <input type="hidden" asp-for="VoucherItems[i].Id" class="item-id" />
+                                            <input type="hidden" asp-for="VoucherItems[i].VoucherId" value="@Model.Voucher.Id" />
+                                            <select asp-for="VoucherItems[i].ControlId"
+                                                    asp-items="@(new SelectList(Model.AllControls, "Id", "Name"))"
+                                                    class="form-control control-select">
+                                                <option value="">--Select Control--</option>
+                                            </select>
+                                            <span asp-validation-for="VoucherItems[i].ControlId" class="text-danger"></span>
+                                        </td>
+                                        <td>
+                                            <select asp-for="VoucherItems[i].SubSidiaryId"
+                                                    asp-items="@(new SelectList(Model.AllSubsidiaries, "Value", "Text"))"
+                                                    class="form-control subsidiary-select">
+                                                <option value="">--Select Subsidiary--</option>
+                                            </select>
+                                            <span asp-validation-for="VoucherItems[i].SubSidiaryId" class="text-danger"></span>
+                                        </td>
+                                        <td>
+                                            <input asp-for="VoucherItems[i].Description" class="form-control" />
+                                            <span asp-validation-for="VoucherItems[i].Description" class="text-danger"></span>
+                                        </td>
+                                        @if (Model.Voucher.VoucherTypeId == 1) // Both Debit & Credit
+                                        {
+                                            <td>
+                                                <input asp-for="VoucherItems[i].Debit" class="form-control debit-input text-right" type="number" step="0.01" />
+                                                <span asp-validation-for="VoucherItems[i].Debit" class="text-danger"></span>
+                                            </td>
+                                            <td>
+                                                <input asp-for="VoucherItems[i].Credit" class="form-control credit-input text-right" type="number" step="0.01" />
+                                                <span asp-validation-for="VoucherItems[i].Credit" class="text-danger"></span>
+                                            </td>
+                                        }
+                                        else if (Model.Voucher.VoucherTypeId == 2 || Model.Voucher.VoucherTypeId == 4) // Debit Only
+                                        {
+                                            <td>
+                                                <input asp-for="VoucherItems[i].Debit" class="form-control debit-input text-right" type="number" step="0.01" />
+                                                <span asp-validation-for="VoucherItems[i].Debit" class="text-danger"></span>
+                                            </td>
+                                        }
+                                        else if (Model.Voucher.VoucherTypeId == 3 || Model.Voucher.VoucherTypeId == 5) // Credit Only
+                                        {
+                                            <td>
+                                                <input asp-for="VoucherItems[i].Credit" class="form-control credit-input text-right" type="number" step="0.01" />
+                                                <span asp-validation-for="VoucherItems[i].Credit" class="text-danger"></span>
+                                            </td>
+                                        }
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm remove-row"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                        @* <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right"><strong>Total:</strong></td>
+                            @if (Model.Voucher.VoucherTypeId == 1)
+                            {
+                                <td><input type="text" id="totalDebit" class="form-control text-right" readonly /></td>
+                                <td><input type="text" id="totalCredit" class="form-control text-right" readonly /></td>
+                                <td></td>
+                            }
+                            else if (Model.Voucher.VoucherTypeId == 2 || Model.Voucher.VoucherTypeId == 4)
+                            {
+                                <td><input type="text" id="totalDebit" class="form-control text-right" readonly /></td>
+                                <td></td>
+                            }
+                            else if (Model.Voucher.VoucherTypeId == 3 || Model.Voucher.VoucherTypeId == 5)
+                            {
+                                <td><input type="text" id="totalCredit" class="form-control text-right" readonly /></td>
+                                <td></td>
+                            }
+                        </tr>
+                    </tfoot> *@
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="col-lg-12 text-center mt-2">
+                    @* The "Save Changes" button will now submit the entire form *@
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    @* <a asp-page="./Index" class="btn btn-secondary">Back to List</a> *@
+                    @* Removed Finalize button as per your request *@
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Pre-generate the options HTML for Control dropdown
+            const controlOptionsHtml = `
+                <option value="">--Select Control--</option>
+        @foreach (var control in Model.AllControls)
+        {
+                                        <option value="@control.Id">@control.Name</option>
+        }
+            `;
+
+            // Pre-generate the options HTML for Subsidiary dropdown
+            const subsidiaryOptionsHtml = `
+                <option value="">--Select Subsidiary--</option>
+        @foreach (var sub in Model.AllSubsidiaries)
+        {
+                                        <option value="@sub.Value">@sub.Text</option>
+        }
+            `;
+
+            // Function to update totals (debit and credit)
+            function updateTotals() {
+                let totalDebit = 0;
+                let totalCredit = 0;
+
+                $('#voucherItemsTable tbody tr').each(function () {
+                    const debit = parseFloat($(this).find('.debit-input').val()) || 0;
+                    const credit = parseFloat($(this).find('.credit-input').val()) || 0;
+                    totalDebit += debit;
+                    totalCredit += credit;
+                });
+
+                $('#totalDebit').val(totalDebit.toFixed(2));
+                $('#totalCredit').val(totalCredit.toFixed(2));
+            }
+
+            // Function to update S/N (serial number) column
+            function updateSerialNumbers() {
+                $('#voucherItemsTable tbody tr').each(function (index) {
+                    $(this).find('td:first').text(index + 1); // Update the text of the first td in each row
+                });
+            }
+
+
+            // Initial update of totals when the page loads
+            updateTotals();
+            updateSerialNumbers(); // Also update S/N on initial load
+
+            // Event listener for input changes on debit/credit fields
+            $('#voucherItemsTable').on('input', '.debit-input, .credit-input', function () {
+                updateTotals();
+            });
+
+            // Handle adding new voucher item row
+            $('#addNewItem').click(function () {
+                const newIndex = $('#voucherItemsTable tbody tr').length; // Get the current number of rows to use as the new index
+                const currentVoucherTypeId = @Model.Voucher.VoucherTypeId; // Get the VoucherTypeId from the Model
+
+                let debitColumnHtml = '';
+                let creditColumnHtml = '';
+
+                if (currentVoucherTypeId === 1) { // Journal
+                    debitColumnHtml = `
+                        <td>
+                            <input name="VoucherItems[\${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[\${newIndex}].Debit" class="text-danger"></span>
+                        </td>
+                    `;
+                    creditColumnHtml = `
+                        <td>
+                            <input name="VoucherItems[\${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[\${newIndex}].Credit" class="text-danger"></span>
+                        </td>
+                    `;
+                } else if (currentVoucherTypeId === 2 || currentVoucherTypeId === 4) { // Debit Only
+                    debitColumnHtml = `
+                        <td>
+                            <input name="VoucherItems[\${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[\${newIndex}].Debit" class="text-danger"></span>
+                        </td>
+                    `;
+                } else if (currentVoucherTypeId === 3 || currentVoucherTypeId === 5) { // Credit Only
+                    creditColumnHtml = `
+                        <td>
+                            <input name="VoucherItems[\${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[\${newIndex}].Credit" class="text-danger"></span>
+                        </td>
+                    `;
+                }
+
+                const newRow = `
+                    <tr class="voucher-item-row">
+                        <td>${newIndex + 1}</td> @* ADDED THIS CELL FOR S/N *@
+                        <td>
+                            <input type="hidden" name="VoucherItems[${newIndex}].Id" value="0" class="item-id" />
+                            <input type="hidden" name="VoucherItems[${newIndex}].VoucherId" value="@Model.Voucher.Id" />
+                            <select name="VoucherItems[${newIndex}].ControlId"
+                                    id="VoucherItems_${newIndex}__ControlId"
+                                    class="form-control control-select">
+                                ${controlOptionsHtml}
+                            </select>
+                            <span data-valmsg-for="VoucherItems[${newIndex}].ControlId" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <select name="VoucherItems[${newIndex}].SubSidiaryId"
+                                    id="VoucherItems_${newIndex}__SubSidiaryId"
+                                    class="form-control subsidiary-select">
+                                ${subsidiaryOptionsHtml}
+                            </select>
+                            <span data-valmsg-for="VoucherItems[${newIndex}].SubSidiaryId" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input name="VoucherItems[${newIndex}].Description" class="form-control" />
+                            <span data-valmsg-for="VoucherItems[${newIndex}].Description" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input name="VoucherItems[${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[${newIndex}].Debit" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input name="VoucherItems[${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
+                            <span data-valmsg-for="VoucherItems[${newIndex}].Credit" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm remove-row"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+                $('#voucherItemsTable tbody').append(newRow); // Append the new row to the table body
+                updateTotals(); // Update totals after adding new row
+                updateSerialNumbers(); // Update S/N for all rows including the new one
+
+                // Re-parse validation for the new row (essential for client-side validation)
+                const form = $('#mainForm');
+                form.removeData('validator');
+                form.removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse(form);
+            });
+
+            // Handle deleting items (both existing and newly added)
+            // Changed from .delete-item to .remove-row based on your HTML
+            $('#voucherItemsTable').on('click', '.remove-row', function () {
+                const row = $(this).closest('tr'); // Get the parent table row
+                const itemId = row.find('.item-id').val(); // Get the hidden Id of the voucher item
+
+                if (itemId && itemId !== "0") {
+                    // Item exists in DB (Id is not 0), confirm deletion via AJAX
+                    if (confirm("Are you sure you want to delete this item? This action cannot be undone.")) {
+                        $.ajax({
+                            url: '?handler=DeleteItem', // Calls the OnPostDeleteItem handler in the PageModel
+                            type: 'POST',
+                            headers: {
+                                'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                            },
+                            data: { id: itemId }, // Pass the item Id to the handler
+                            success: function (result) {
+                                if (result === true) {
+                                    row.remove(); // Remove the row from the UI
+                                    updateTotals(); // Recalculate totals
+                                    updateSerialNumbers(); // Update S/N after removing a row
+                                    // Re-index remaining rows for correct model binding
+                                    $('#voucherItemsTable tbody tr').each(function (idx) {
+                                        $(this).find('[name^="VoucherItems"]').each(function () {
+                                            this.name = this.name.replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`);
+                                            this.id = this.id.replace(/VoucherItems_\d+__/, `VoucherItems_${idx}__`);
+                                        });
+                                        $(this).find('[data-valmsg-for^="VoucherItems"]').each(function () {
+                                            this.setAttribute('data-valmsg-for', this.getAttribute('data-valmsg-for').replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`));
+                                        });
+                                    });
+                                } else {
+                                    alert('Error deleting item from database.');
+                                }
+                            },
+                            error: function () {
+                                alert('An error occurred during deletion.');
+                            }
+                        });
+                    }
+                } else {
+                    // New item (Id is 0 or empty), just remove from UI without DB interaction
+                    row.remove();
+                    updateTotals(); // Recalculate totals
+                    updateSerialNumbers(); // Update S/N after removing a new row
+                    // Re-index remaining rows for correct model binding
+                    $('#voucherItemsTable tbody tr').each(function (idx) {
+                        $(this).find('[name^="VoucherItems"]').each(function () {
+                            this.name = this.name.replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`);
+                            this.id = this.id.replace(/VoucherItems_\d+__/, `VoucherItems_${idx}__`);
+                        });
+                        $(this).find('[data-valmsg-for^="VoucherItems"]').each(function () {
+                            this.setAttribute('data-valmsg-for', this.getAttribute('data-valmsg-for').replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`));
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+}

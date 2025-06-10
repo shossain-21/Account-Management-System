@@ -3,27 +3,32 @@
   "WorkspaceRootPath": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\commonajaxcalls\\mathhelperajax.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\commonajaxcalls\\mathhelperajax.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/._sqlexpress/accountdb/True/SqlTable/dbo.AspNetVouchers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\subsidiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\subsidiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\accounts\\vouchers\\voucherajax.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\pages\\accounts\\vouchers\\voucherajax.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\voucheritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\voucheritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\models\\accounts\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|solutionrelative:accountmanagementsystem\\models\\accounts\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E959721-BE82-4D21-B6DB-C19279F204BB}|AccountManagementSystem\\AccountManagementSystem.csproj|d:\\megasync\\documents\\dotnet project\\account-management-system\\accountmanagementsystem\\accountmanagementsystem\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -37,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -109,89 +114,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AccountManagementSystem\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwB8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T14:09:11.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SubSidiary.cs",
-              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
-              "RelativeDocumentMoniker": "AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
-              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\SubSidiary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T15:50:10.688Z",
+              "WhenOpened": "2025-06-08T14:09:11.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Voucher.cs",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\Voucher.cs",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Models\\Accounts\\Voucher.cs",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\Voucher.cs*",
-              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\Voucher.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\Voucher.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\Voucher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:37:14.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dbo.AspNetVouchers [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/._sqlexpress/accountdb/True/SqlTable/dbo.AspNetVouchers.sql",
-              "ToolTip": "dbo.AspNetVouchers [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-06-10T06:52:53.377Z",
+              "DocumentIndex": 5,
+              "Title": "VoucherItem.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\VoucherItem.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Models\\Accounts\\VoucherItem.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Models\\Accounts\\VoucherItem.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Models\\Accounts\\VoucherItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:24:24.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml*",
-              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml*",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAqwIUAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-10T06:54:58.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs*",
-              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwCcAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Create.cshtml.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T06:55:24.128Z",
+              "WhenOpened": "2025-06-10T15:33:43.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MathHelperAjax.cshtml",
-              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\CommonAjaxCalls\\MathHelperAjax.cshtml",
-              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\CommonAjaxCalls\\MathHelperAjax.cshtml",
-              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\CommonAjaxCalls\\MathHelperAjax.cshtml",
-              "RelativeToolTip": "AccountManagementSystem\\Pages\\CommonAjaxCalls\\MathHelperAjax.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml*",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml*",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAqwEwBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-10T07:40:45.85Z",
+              "WhenOpened": "2025-06-10T15:35:37.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\Edit.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:38:16.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VoucherAjax.cshtml.cs",
+              "DocumentMoniker": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\VoucherAjax.cshtml.cs",
+              "RelativeDocumentMoniker": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\VoucherAjax.cshtml.cs",
+              "ToolTip": "D:\\MEGAsync\\Documents\\DotNet Project\\Account-Management-System\\AccountManagementSystem\\AccountManagementSystem\\Pages\\Accounts\\Vouchers\\VoucherAjax.cshtml.cs",
+              "RelativeToolTip": "AccountManagementSystem\\Pages\\Accounts\\Vouchers\\VoucherAjax.cshtml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T16:40:18.008Z",
               "EditorCaption": ""
             }
           ]
