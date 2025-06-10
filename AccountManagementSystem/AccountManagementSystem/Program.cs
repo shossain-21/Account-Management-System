@@ -26,6 +26,8 @@ builder.Services.AddDefaultIdentity<AccountUser>(options => options.SignIn.Requi
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 
+builder.Services.AddScoped<IVoucherHelperService, VoucherHelperService>();
+
 //builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 //{
 //    options.LoginPath = "/Identity/Account/Login/";
@@ -44,6 +46,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

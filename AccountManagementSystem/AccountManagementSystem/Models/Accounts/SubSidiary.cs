@@ -17,9 +17,9 @@ namespace AccountManagementSystem.Models.Accounts
         public double OpeningDr { get; set; }
         public double OpeningCr { get; set; }
 
-        
+        [NotMapped]
         public string ControlCode { get; set; } = string.Empty;
-        
+        [NotMapped]
         public string ControlName { get; set; } = string.Empty;
 
     }

@@ -33,6 +33,21 @@
                             if (User.IsInRole("admin"))
                             {
                                 <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Cash Voucher</span></a>
+                                    <ul class="dropdown-menu">
+                                        @* Changed from div to ul, removed megamenu col2 *@
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Cash Payment</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="2">Add Cash Payment</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="2">View Cash Payment</a></li>
+
+                                        <li><hr class="dropdown-divider" /></li> @* Added a divider for separation *@
+
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="far fa-memo-pad me-2"></i><span>Journal Voucher</span></a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="1">Add Journal Voucher</a></li>

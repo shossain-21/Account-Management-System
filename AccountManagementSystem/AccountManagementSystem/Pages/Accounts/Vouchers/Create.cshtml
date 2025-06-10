@@ -1,0 +1,131 @@
+﻿@page "{id}"
+@model AccountManagementSystem.Pages.Accounts.Vouchers.CreateModel
+
+@{
+    ViewData["Title"] = "Create " + Model.Voucher.VoucherTypeName;
+}
+
+@section Css {
+    <link asp-append-version="true" rel="stylesheet" type="text/css" href="~/plugins/jquery-ui/jquery-ui.min.css" />
+    <style type="text/css">
+        .table .title {
+            width: 100px;
+        }
+    </style>
+}
+
+<div class="mt-4">
+    <form id="mainForm" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Voucher.VoucherTypeId" />
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col m-auto"><p class="mb-0 fw-bold">@ViewData["Title"]</p></div>
+                            <div class="col text-end"><button type="button" onclick="window.history.go(-1); return false;" class="btn btn-sm btn-warning"><i class="fa fa-chevron-left me-1"></i>Back</button></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr class="text-center">
+                                        <th colspan="2">Voucher Information</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Date <span class="text-danger">*</span></td>
+                                        <td class="p-1"><input asp-for="Voucher.VoucherDate" class="form-control datepicker" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Reference No <span class="text-danger">*</span></td>
+                                        <td class="p-1">
+                                            <input autocomplete="off" asp-for="Voucher.VoucherNo" class="form-control" />
+                                            <span asp-validation-for="Voucher.VoucherNo" class="text-danger"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title" style="width: 150px;">Title</td>
+                                        <td class="p-1"><input autocomplete="off" asp-for="Voucher.Title" class="form-control" /></td>
+                                    </tr>
+                                    @* <tr>
+                                    <td class="title">On Acc.</td>
+                                    <td class="p-1"><input autocomplete="off" asp-for="AccVoucher.OnAccount" class="form-control" /></td>
+                                </tr> *@
+                                    @if (Model.VoucherTypeId == 4 || Model.VoucherTypeId == 5)
+                                    {
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Cheque/DD,PO</td>
+                                            <td class="p-1"><input autocomplete="off" asp-for="Voucher.ChequeNo" class="form-control" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Cheque Date</td>
+                                            <td class="p-1"><input asp-for="Voucher.ChequeDate" class="form-control datepicker" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title" style="width: 150px;">Bank</td>
+                                            <td class="p-1"><input autocomplete="off" asp-for="Voucher.Bank" class="form-control" /></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-lg-12 text-center">
+                            <button id="submitForm" type="button" class="btn btn-primary">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $("#submitForm").on('click', function () {
+            var voucherNo = $('#Voucher_VoucherNo').val();
+            var voucherDate = $('[name="Voucher.VoucherDate"]').val();
+            if (voucherNo == "") {
+                errorNotify("Please type a reference No.");
+            }
+            else if (voucherDate == "") {
+                errorNotify("Please select a voucher date.");
+            }
+            else {
+                $("#mainForm").submit();
+            }
+        });
+
+        function initializeAutocomplete(searchFieldCode, inputElementId) {
+            $("#" + inputElementId).autocomplete({
+                source: function (request, response) {
+                    makeAjaxCall('@Url.Page("/CommonAjaxCalls/MathHelperAjax", "GetHistory")', {
+                        term: request.term,
+                        field: searchFieldCode
+                    }, function (success, data) {
+                        if (success) {
+                            response($.map(data, function (item) {
+                                return item;
+                            }));
+                        } else {
+                            errorNotify();
+                        }
+                    });
+                },
+                minLength: 0
+            }).on('focus', function () {
+                $(this).autocomplete("search", $(this).val());
+            });
+        }
+
+        $(document).ready(function () {
+            initializeAutocomplete(1, "Voucher_Title");
+        });
+    </script>
+}
