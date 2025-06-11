@@ -16,13 +16,24 @@ namespace AccountManagementSystem.Pages.Accounts.SubSidiaries
             _context = context;
         }
 
-        public required List<SubSidiary> SubSidiaries { get; set; }
-
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
             SubSidiaries = await _context.AspNetSubSidiaries
                 .FromSqlRaw("EXEC spGetAllSubSidiaries")
                 .ToListAsync();
+
+            foreach (var subSidiary in SubSidiaries)
+            {
+                var controlId = new SqlParameter("@Id", subSidiary.ControlId);
+                var control = _context.AspNetControls
+                    .FromSqlRaw("EXEC spGetControlDetailsById @Id", controlId)
+                    .AsEnumerable()
+                    .FirstOrDefault();
+
+                subSidiary.Control = control;
+            }
+
+            return Page();
         }
 
         public async Task<IActionResult> OnPostDeleteAsync(int id)
@@ -47,5 +58,6 @@ namespace AccountManagementSystem.Pages.Accounts.SubSidiaries
             return RedirectToPage("Index");
         }
 
+        public required List<SubSidiary> SubSidiaries { get; set; }
     }
 }

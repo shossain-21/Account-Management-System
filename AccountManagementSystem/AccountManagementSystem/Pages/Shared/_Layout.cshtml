@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="~/images/Qcounts-Logo-Transparent1.png" alt="Qcounts Logo" style="height: 60px; width: auto;" />
+                    <img src="~/images/Qcounts-Logo-Transparent1.png" alt="Qcounts Logo" style="height: 40px; width: auto;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -90,6 +90,13 @@
                                         <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Create">Add Sub-Sidiary</a></li>
                                         <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Index">View Sub-Sidiaries</a></li>
 
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-user-cog me-2"></i><span>User Settings</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="1">Create User</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="1">View Users</a></li>
                                     </ul>
                                 </li>
                             }

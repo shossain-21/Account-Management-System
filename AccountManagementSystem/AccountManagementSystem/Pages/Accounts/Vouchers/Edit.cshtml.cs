@@ -164,7 +164,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
                 await transaction.CommitAsync();
 
-                return RedirectToPage("./Index", new { id = Voucher.Id });
+                return RedirectToPage("./Edit", new { id = Voucher.Id });
             }
             catch (DbUpdateException ex)
             {

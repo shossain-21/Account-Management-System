@@ -31,9 +31,9 @@
                                 <tr>
                                     <th class="no-search serial" style="width: 5%;">S/N</th>
                                     <th class="serial" style="width: 10%;">Code</th>
-                                    <th style="width: 30%;">Sub-Group Name</th>
-                                    <th style="width: 10%;">Group Code</th>
-                                    <th style="width: 30%;">Group Name</th>
+                                    <th style="width: 30%;">Sub-Sidiary Name</th>
+                                    <th style="width: 10%;">Control Code</th>
+                                    <th style="width: 30%;">Control Name</th>
                                     <th class="no-search print-hide action" style="width: 15%;">Action</th>
                                 </tr>
                             </thead>
@@ -48,8 +48,8 @@
                                         <td class="serial">@(++i)</td>
                                         <td class="text-start">@item.Code</td>
                                         <td class="text-start">@item.Name</td>
-                                        <td class="text-start">@item.ControlCode</td>
-                                        <td class="text-start"> @item.ControlName</td>
+                                        <td class="text-start">@item.Control.Code</td>
+                                        <td class="text-start"> @item.Control.Name</td>
                                         <td class="action print-hide text-end">
                                             <div class="btn-group gap-3">
                                                 <a class="btn btn-sm btn-primary px-4 py-2 rounded" asp-page="Edit" asp-route-id="@item.Id">Edit</a>

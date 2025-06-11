@@ -19,12 +19,13 @@
 
         .table input.form-control,
         .table select.form-control {
-            height: calc(1.5em + 0.5rem + 2px); 
+            height: calc(1.5em + 0.5rem + 2px);
             padding: 0.25rem 0.5rem;
-            font-size: 0.875rem; 
+            font-size: 0.875rem;
         }
+
         .table .btn-danger {
-            padding: 0.25rem 0.5rem; 
+            padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
             line-height: 1.5;
             border-radius: 0.2rem;
@@ -216,7 +217,7 @@
                 <option value="">--Select Control--</option>
         @foreach (var control in Model.AllControls)
         {
-                                        <option value="@control.Id">@control.Name</option>
+                                                    <option value="@control.Id">@control.Name</option>
         }
             `;
 
@@ -224,11 +225,11 @@
                 <option value="">--Select Subsidiary--</option>
         @foreach (var sub in Model.AllSubsidiaries)
         {
-                                        <option value="@sub.Value">@sub.Text</option>
+                                                    <option value="@sub.Value">@sub.Text</option>
         }
             `;
 
-            
+
             function updateTotals() {
                 let totalDebit = 0;
                 let totalCredit = 0;
@@ -244,58 +245,26 @@
                 $('#totalCredit').val(totalCredit.toFixed(2));
             }
 
-            
+
             function updateSerialNumbers() {
                 $('#voucherItemsTable tbody tr').each(function (index) {
-                    $(this).find('td:first').text(index + 1); 
+                    $(this).find('td:first').text(index + 1);
                 });
             }
 
 
-            
-            updateTotals();
-            updateSerialNumbers(); 
 
-            
+            updateTotals();
+            updateSerialNumbers();
+
+
             $('#voucherItemsTable').on('input', '.debit-input, .credit-input', function () {
                 updateTotals();
             });
 
             $('#addNewItem').click(function () {
-                const newIndex = $('#voucherItemsTable tbody tr').length; 
-                const currentVoucherTypeId = @Model.Voucher.VoucherTypeId; 
-
-                let debitColumnHtml = '';
-                let creditColumnHtml = '';
-
-                if (currentVoucherTypeId === 1) { // Journal
-                    debitColumnHtml = `
-                        <td>
-                            <input name="VoucherItems[\${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[\${newIndex}].Debit" class="text-danger"></span>
-                        </td>
-                    `;
-                    creditColumnHtml = `
-                        <td>
-                            <input name="VoucherItems[\${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[\${newIndex}].Credit" class="text-danger"></span>
-                        </td>
-                    `;
-                } else if (currentVoucherTypeId === 2 || currentVoucherTypeId === 4) { // Debit Only
-                    debitColumnHtml = `
-                        <td>
-                            <input name="VoucherItems[\${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[\${newIndex}].Debit" class="text-danger"></span>
-                        </td>
-                    `;
-                } else if (currentVoucherTypeId === 3 || currentVoucherTypeId === 5) { // Credit Only
-                    creditColumnHtml = `
-                        <td>
-                            <input name="VoucherItems[\${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[\${newIndex}].Credit" class="text-danger"></span>
-                        </td>
-                    `;
-                }
+                const newIndex = $('#voucherItemsTable tbody tr').length;
+                const currentVoucherTypeId = @Model.Voucher.VoucherTypeId;
 
                 const newRow = `
                     <tr class="voucher-item-row">
@@ -322,21 +291,28 @@
                             <input name="VoucherItems[${newIndex}].Description" class="form-control" />
                             <span data-valmsg-for="VoucherItems[${newIndex}].Description" class="text-danger"></span>
                         </td>
-                        <td>
-                            <input name="VoucherItems[${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[${newIndex}].Debit" class="text-danger"></span>
-                        </td>
-                        <td>
-                            <input name="VoucherItems[${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
-                            <span data-valmsg-for="VoucherItems[${newIndex}].Credit" class="text-danger"></span>
-                        </td>
+                        @if (Model.Voucher.VoucherTypeId == 1 || Model.Voucher.VoucherTypeId == 2 || Model.Voucher.VoucherTypeId == 4)
+                        {
+                            <td>
+                                <input name="VoucherItems[${newIndex}].Debit" type="number" step="0.01" class="form-control debit-input text-right" />
+                                <span data-valmsg-for="VoucherItems[${newIndex}].Debit" class="text-danger"></span>
+                            </td>
+                        }
+                        @if (Model.Voucher.VoucherTypeId == 1 || Model.Voucher.VoucherTypeId == 3 || Model.Voucher.VoucherTypeId == 5)
+                        {
+                            <td>
+                                <input name="VoucherItems[${newIndex}].Credit" type="number" step="0.01" class="form-control credit-input text-right" />
+                                <span data-valmsg-for="VoucherItems[${newIndex}].Credit" class="text-danger"></span>
+                            </td>
+                        }
+
                         <td>
                             <button type="button" class="btn btn-danger btn-sm remove-row"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 `;
-                $('#voucherItemsTable tbody').append(newRow); 
-                updateTotals(); 
+                $('#voucherItemsTable tbody').append(newRow);
+                updateTotals();
                 updateSerialNumbers();
 
                 const form = $('#mainForm');
@@ -346,13 +322,13 @@
             });
 
             $('#voucherItemsTable').on('click', '.remove-row', function () {
-                const row = $(this).closest('tr'); 
-                const itemId = row.find('.item-id').val(); 
+                const row = $(this).closest('tr');
+                const itemId = row.find('.item-id').val();
 
                 if (itemId && itemId !== "0") {
                     if (confirm("Are you sure you want to delete this item? This action cannot be undone.")) {
                         $.ajax({
-                            url: '?handler=DeleteItem', 
+                            url: '?handler=DeleteItem',
                             type: 'POST',
                             headers: {
                                 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
@@ -362,7 +338,7 @@
                                 if (result === true) {
                                     row.remove();
                                     updateTotals();
-                                    updateSerialNumbers(); 
+                                    updateSerialNumbers();
                                     $('#voucherItemsTable tbody tr').each(function (idx) {
                                         $(this).find('[name^="VoucherItems"]').each(function () {
                                             this.name = this.name.replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`);
@@ -383,8 +359,8 @@
                     }
                 } else {
                     row.remove();
-                    updateTotals(); 
-                    updateSerialNumbers(); 
+                    updateTotals();
+                    updateSerialNumbers();
                     $('#voucherItemsTable tbody tr').each(function (idx) {
                         $(this).find('[name^="VoucherItems"]').each(function () {
                             this.name = this.name.replace(/VoucherItems\[\d+\]/, `VoucherItems[${idx}]`);

@@ -44,7 +44,7 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ## Screenshots & UI Overview
 
 ### Landing Page
-![Login Page (Sample Image)](screenshots/login-page.jpg)
+![Login Page (Sample Image)](screenshots/Landing Page.png)
 
 ### Register Page
 ![Login Page (Sample Image)](screenshots/login-page.jpg)
