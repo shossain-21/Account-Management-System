@@ -1,3 +1,13 @@
+/* Ensure your navbar styles are here */
+.navbar {
+    min-height: 80px; /* Set your desired total navbar height here */
+    padding-top: 0; /* Remove default top padding */
+    padding-bottom: 0; /* Remove default bottom padding */
+    /* You might need to adjust side padding if your layout changes */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 html {
   font-size: 14px;
 }
