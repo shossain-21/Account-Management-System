@@ -16,8 +16,8 @@ namespace AccountManagementSystem.Models.Accounts
         public int ControlId { get; set; }
         public Control? Control { get; set; }
 
-        public double? Debit { get; set; }
-        public double? Credit { get; set; }
+        public decimal Debit { get; set; }
+        public decimal Credit { get; set; }
 
         public string? Description { get; set; }
     }

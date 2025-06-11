@@ -5,11 +5,11 @@ using AccountManagementSystem.Models.Accounts;
 using AccountManagementSystem.Services;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
-using System.Linq; // Keep this for LINQ-to-Objects (e.g., .Sum(), .Where() on lists)
+using System.Linq; 
 using System.Threading.Tasks;
 using System;
 using System.Data;
-using Microsoft.AspNetCore.Mvc.Rendering; // Added this using directive
+using Microsoft.AspNetCore.Mvc.Rendering; 
 
 namespace AccountManagementSystem.Pages.Accounts.Vouchers
 {
@@ -32,12 +32,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
         public List<Control> AllControls { get; set; } = new List<Control>();
 
-        // This property will hold all subsidiaries as SelectListItems for the dropdown
         public List<SelectListItem> AllSubsidiaries { get; set; } = new List<SelectListItem>();
-
-        // REMOVE THIS PROPERTY if you no longer need the dictionary for specific control IDs.
-        // public Dictionary<int, List<SubSidiary>> SubsidiariesForExistingItems { get; set; } = new Dictionary<int, List<SubSidiary>>();
-
 
         public string VoucherTypeName { get; set; } = string.Empty;
 
@@ -70,24 +65,20 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                                   .AsEnumerable()
                                   .ToList();
 
-            // --- START: MODIFIED SECTION FOR AllSubsidiaries in OnGetAsync ---
-            // Fetch all subsidiaries from the database (You need to ensure spGetAllSubSidiaries exists)
             var allSubsidiariesData = _context.AspNetSubSidiaries
                                               .FromSqlRaw("EXEC spGetAllSubSidiaries")
                                               .AsEnumerable()
                                               .ToList();
 
-            // Manually populate AllSubsidiaries from the fetched data (avoiding LINQ Select)
-            AllSubsidiaries = new List<SelectListItem>(); // Initialize to ensure it's clean
+            AllSubsidiaries = new List<SelectListItem>(); 
             foreach (var subData in allSubsidiariesData)
             {
                 AllSubsidiaries.Add(new SelectListItem
                 {
-                    Value = subData.Id.ToString(), // Convert int Id to string for SelectListItem.Value
+                    Value = subData.Id.ToString(), 
                     Text = subData.Name
                 });
             }
-            // --- END: MODIFIED SECTION FOR AllSubsidiaries in OnGetAsync ---
 
             VoucherTypeName = _voucherHelper.GetVoucherTypeName(Voucher.VoucherTypeId);
 
@@ -103,58 +94,24 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
             VoucherTypeName = _voucherHelper.GetVoucherTypeName(Voucher.VoucherTypeId);
 
-            // --- START: MODIFIED SECTION FOR AllSubsidiaries in OnPostAsync ---
-            // Fetch all subsidiaries from the database (You need to ensure spGetAllSubSidiaries exists)
             var allSubsidiariesData = _context.AspNetSubSidiaries
                                               .FromSqlRaw("EXEC spGetAllSubSidiaries")
                                               .AsEnumerable()
                                               .ToList();
 
-            // Manually populate AllSubsidiaries from the fetched data (avoiding LINQ Select)
-            AllSubsidiaries = new List<SelectListItem>(); // Initialize to ensure it's clean
             foreach (var subData in allSubsidiariesData)
             {
                 AllSubsidiaries.Add(new SelectListItem
                 {
-                    Value = subData.Id.ToString(), // Convert int Id to string for SelectListItem.Value
+                    Value = subData.Id.ToString(), 
                     Text = subData.Name
                 });
             }
-            // --- END: MODIFIED SECTION FOR AllSubsidiaries in OnPostAsync ---
-
-
-            // REMOVE this entire block, as it refers to the removed SubsidiariesForExistingItems dictionary
-            // and the previous logic for uniqueControlIds is no longer necessary here for populating options.
-            // var uniqueControlIds = VoucherItems.Where(vi => vi.ControlId > 0).Select(vi => vi.ControlId).Distinct().ToList();
-            // foreach (var controlId in uniqueControlIds)
-            // {
-            //     var subsidiaryParam = new SqlParameter("@ControlId", controlId);
-            //     var subsidiaries = _context.AspNetSubSidiaries
-            //                                .FromSqlRaw("EXEC spGetSubSidiariesByControlId @ControlId", subsidiaryParam)
-            //                                .AsEnumerable()
-            //                                .ToList();
-            //     if (!SubsidiariesForExistingItems.ContainsKey(controlId)) // THIS WAS THE ERROR LINE
-            //     {
-            //         SubsidiariesForExistingItems.Add(controlId, subsidiaries);
-            //     }
-            // }
-
 
             if (!ModelState.IsValid)
             {
-                // Ensure data is reloaded for page display if validation fails
-                // The AllControls and AllSubsidiaries are already loaded above, so no need to reload them here.
                 return Page();
             }
-
-            //// LINQ-to-Objects operations are fine here for calculation
-            //if (VoucherItems.Sum(vi => vi.Debit) != VoucherItems.Sum(vi => vi.Credit))
-            //{
-            //    ModelState.AddModelError(string.Empty, "Total Debit must equal Total Credit.");
-            //    // Ensure data is reloaded for page display if validation fails
-            //    // The AllControls and AllSubsidiaries are already loaded above.
-            //    return Page();
-            //}
 
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
@@ -207,15 +164,13 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
                 await transaction.CommitAsync();
 
-                return RedirectToPage("./Edit", new { id = Voucher.Id });
+                return RedirectToPage("./Details", new { id = Voucher.Id });
             }
             catch (DbUpdateException ex)
             {
                 await transaction.RollbackAsync();
                 ModelState.AddModelError(string.Empty, "An error occurred while saving the voucher: " + ex.Message);
                 Console.WriteLine(ex.ToString());
-                // Ensure data is reloaded for page display if an error occurs
-                // The AllControls and AllSubsidiaries are already loaded above.
                 return Page();
             }
             catch (Exception ex)
@@ -223,8 +178,6 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                 await transaction.RollbackAsync();
                 ModelState.AddModelError(string.Empty, "An unexpected error occurred: " + ex.Message);
                 Console.WriteLine(ex.ToString());
-                // Ensure data is reloaded for page display if an error occurs
-                // The AllControls and AllSubsidiaries are already loaded above.
                 return Page();
             }
         }
