@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AccountManagementSystem.Models.Accounts
 {
@@ -22,6 +24,8 @@ namespace AccountManagementSystem.Models.Accounts
                                                                     // 5 = Cheque Receive Voucher
         [Required]
         public string Title { get; set; }
+
+        public List<VoucherItem> VoucherItems { get; set; }
 
         [System.ComponentModel.DataAnnotations.Schema.NotMapped]
         public string VoucherTypeName { get; set; } = string.Empty;

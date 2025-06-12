@@ -4,6 +4,18 @@ namespace AccountManagementSystem.Models._Utilities
 {
     public static class Helpers
     {
+        public static string FixNumber(this decimal amount) // Changed from double to decimal
+        {
+            if (amount == 0m) // Use 'm' suffix for decimal literal
+            {
+                return "";
+            }
+            else
+            {
+                return amount.ToString("N2"); // "N2" formats to two decimal places with thousands separator
+            }
+        }
+
         public static string FixNumber(this double amount)
         {
             if (amount == 0)
@@ -15,5 +27,18 @@ namespace AccountManagementSystem.Models._Utilities
                 return amount.ToString("N2");
             }
         }
+
+        public static string FixDate(this DateTime date)
+        {
+            if (date == default)
+            {
+                return "";
+            }
+            else
+            {
+                return $"{date.ToString("d")}";
+            }
+        }
+
     }
 }
