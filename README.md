@@ -45,7 +45,11 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 
 ### Landing Page
 ![Login Page (Sample Image)](screenshots/Landing-Page.png)
-
+![Login Page (Sample Image)](screenshots/Cash-Voucher-Drop.png)
+![Login Page (Sample Image)](screenshots/Cheque-Voucher-Drop.png)
+![Login Page (Sample Image)](screenshots/JV-Drop.png)
+![Login Page (Sample Image)](screenshots/COA-Drop.png)
+![Login Page (Sample Image)](screenshots/User-Drop.png)
 ### Register Page
 ![Login Page (Sample Image)](screenshots/login-page.jpg)
 
