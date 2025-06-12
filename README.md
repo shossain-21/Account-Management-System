@@ -57,6 +57,13 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ### Register Page
 ![Login Page (Sample Image)](screenshots/Register-Page.png)
 
+### Cash Payment Voucher
+#### Create Page
+![Login Page (Sample Image)](screenshots/Cash-Pay-Create.png)
+
+#### Edit Page
+![Login Page (Sample Image)](screenshots/Cash-Pay-Edit.png)
+
 ### Chart of Accounts
 ![COA (Sample Image)](screenshots/chart-of-accounts-page.png)
 
