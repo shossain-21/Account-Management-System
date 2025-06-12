@@ -23,6 +23,8 @@ namespace AccountManagementSystem.Models.Accounts
         [Required]
         public string Title { get; set; }
 
+        public List<VoucherItem> VoucherItems { get; set; }
+
         [System.ComponentModel.DataAnnotations.Schema.NotMapped]
         public string VoucherTypeName { get; set; } = string.Empty;
     }

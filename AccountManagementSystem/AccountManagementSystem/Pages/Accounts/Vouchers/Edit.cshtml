@@ -90,11 +90,11 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    @*<div class="card-footer">
                         <div class="col-lg-12 text-center">
                             <button id="submitForm" type="button" class="btn btn-primary">Create</button>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@
                                             <input type="hidden" asp-for="VoucherItems[i].VoucherId" value="@Model.Voucher.Id" />
                                             <select asp-for="VoucherItems[i].ControlId"
                                                     asp-items="@(new SelectList(Model.AllControls, "Id", "Name"))"
-                                                    class="form-control control-select">
+                                                    class="form-control control-select controlId">
                                                 <option value="">--Select Control--</option>
                                             </select>
                                             <span asp-validation-for="VoucherItems[i].ControlId" class="text-danger"></span>
@@ -151,7 +151,7 @@
                                         <td>
                                             <select asp-for="VoucherItems[i].SubSidiaryId"
                                                     asp-items="@(new SelectList(Model.AllSubsidiaries, "Value", "Text"))"
-                                                    class="form-control subsidiary-select">
+                                                    class="form-control subsidiary-select subSidiaryId">
                                                 <option value="">--Select Subsidiary--</option>
                                             </select>
                                             <span asp-validation-for="VoucherItems[i].SubSidiaryId" class="text-danger"></span>
@@ -211,13 +211,56 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <script>
+<script>
+    $("#voucherItemsTable").on('change', '.controlId', function () {
+        var row = $(this).closest('tr');
+        var controlId = $(this).val();
+        var subSidiarySelect = row.find('.subSidiaryId');
+
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            dataType: 'json',
+            url: '@Url.Page("/Accounts/SubSidiaries/Index", "GetSubSidiaries")',
+            data: {
+                controlId: controlId
+            },
+            cache: false,
+            success: function (results) {
+                subSidiarySelect.empty();
+                $.each(results, function (index, result) {
+                    subSidiarySelect.append(`<option value="${result.id}">${result.code} - ${result.name}</option>`);
+                });
+            },
+            error: function () {
+                errorNotify();
+            }
+        });
+
+        @*makeAjaxCall('@Url.Page("/CommonAjaxCalls/MathHelperAjax", "GetAllSubSidiaries")', { id: accControlId }, function (success, result) {
+            if (success) {
+                var subSidiaries = '<option value="0">Select Sub-Sidiary</option>';
+                $.each(result, function (index, item) {
+                    subSidiaries += `<option value="${item.id}">${item.code} - ${item.name}</option>`;
+                });
+                row.find('.accSubSidiaryId').html(subSidiaries);
+                row.find('.accSubSidiaryId').select2('open');
+            }
+            else {
+                errorNotify();
+            }
+        });*@
+    });
+
         $(document).ready(function () {
             const controlOptionsHtml = `
                 <option value="">--Select Control--</option>
         @foreach (var control in Model.AllControls)
         {
-                                                    <option value="@control.Id">@control.Name</option>
+                                                    <option value="@control.Id">@control.Code @control.Name</option>
         }
             `;
 
@@ -258,6 +301,7 @@
             updateSerialNumbers();
 
 
+
             $('#voucherItemsTable').on('input', '.debit-input, .credit-input', function () {
                 updateTotals();
             });
@@ -274,7 +318,7 @@
                             <input type="hidden" name="VoucherItems[${newIndex}].VoucherId" value="@Model.Voucher.Id" />
                             <select name="VoucherItems[${newIndex}].ControlId"
                                     id="VoucherItems_${newIndex}__ControlId"
-                                    class="form-control control-select">
+                                    class="form-control control-select controlId">
                                 ${controlOptionsHtml}
                             </select>
                             <span data-valmsg-for="VoucherItems[${newIndex}].ControlId" class="text-danger"></span>
@@ -282,7 +326,7 @@
                         <td>
                             <select name="VoucherItems[${newIndex}].SubSidiaryId"
                                     id="VoucherItems_${newIndex}__SubSidiaryId"
-                                    class="form-control subsidiary-select">
+                                    class="form-control subsidiary-select subSidiaryId">
                                 ${subsidiaryOptionsHtml}
                             </select>
                             <span data-valmsg-for="VoucherItems[${newIndex}].SubSidiaryId" class="text-danger"></span>
@@ -373,5 +417,5 @@
                 }
             });
         });
-    </script>
+</script>
 }

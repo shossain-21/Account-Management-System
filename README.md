@@ -64,7 +64,7 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 #### Edit Page
 ![Login Page (Sample Image)](screenshots/Cash-Pay-Edit.png)
 
-#### Edit Page
+#### Index Page
 ![Login Page (Sample Image)](screenshots/Cash-Pay-Index.png)
 
 ### Chart of Accounts

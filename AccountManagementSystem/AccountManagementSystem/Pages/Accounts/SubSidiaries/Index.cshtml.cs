@@ -58,6 +58,17 @@ namespace AccountManagementSystem.Pages.Accounts.SubSidiaries
             return RedirectToPage("Index");
         }
 
+        public async Task<JsonResult> OnGetGetSubSidiaries(int controlId)
+        {
+            var controlIdParam = new SqlParameter("@ControlId", controlId);
+            var subSidiaries = _context.AspNetControls
+                .FromSqlRaw("EXEC spGetSubSidiariesByControlId @ControlId", controlIdParam)
+                .AsEnumerable()
+                .ToList();
+
+            return new JsonResult(subSidiaries);
+        }
+
         public required List<SubSidiary> SubSidiaries { get; set; }
     }
 }

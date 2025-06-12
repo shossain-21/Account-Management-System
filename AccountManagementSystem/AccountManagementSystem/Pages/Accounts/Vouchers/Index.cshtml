@@ -1,0 +1,91 @@
+﻿@page "{id}"
+@model AccountManagementSystem.Pages.Accounts.Vouchers.IndexModel
+@using Models._Utilities
+
+@{
+    ViewData["Title"] = Model.VoucherTypeName + " Index";
+}
+
+@section Css {
+    <partial name="~/Pages/Shared/Datatable/Css.cshtml" />
+    <style type="text/css">
+    </style>
+}
+
+<div class="mt-4">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col m-auto"><p class="mb-0 fw-bold">@ViewData["Title"]</p></div>
+                        <div class="col text-end">
+                            <a asp-page="/Accounts/Vouchers/Create" asp-route-id="@Model.VoucherTypeId" class="btn btn-sm btn-primary"><i class="fa fa-plus me-1"></i>New</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="main-content" class="card-body">
+                    <div class="table-responsive">
+                        <table data-toggle="datatables" class="table align-items-center table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="no-search serial" style="width: 5%;">S/N</th>
+                                    <th class="text-center" style="width: 20%;">Reference No</th>
+                                    <th class="text-center" style="width: 20%;">Date</th>
+                                    <th class="text-center" style="width: 30%;">Title</th>
+                                    <th class="text-center" style="width: 10%;">Amount</th>
+                                    <th class="text-center no-search print-hide action" style="width: 15%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int i = 0;
+                                }
+
+                                @foreach (var item in Model.VoucherItems)
+                                {
+                                    <tr>
+                                        <td class="serial">@(++i)</td>
+                                        <td class="text-center">@item.Voucher.VoucherNo</td>
+                                        <td class="text-center">@item.Voucher.VoucherDate.FixDate()</td>
+                                        <td class="text-wrap">@item.Voucher.Title</td>
+                                        <td class="text-center">
+                                            @if (item.Voucher.VoucherTypeId == 1 || item.Voucher.VoucherTypeId == 2 || item.Voucher.VoucherTypeId == 4)
+                                            {
+                                                @item.Voucher.VoucherItems.Sum(m => m.Debit).FixNumber()
+                                            }
+                                            else if (item.Voucher.VoucherTypeId == 3 || item.Voucher.VoucherTypeId == 5)
+                                            {
+                                                @item.Voucher.VoucherItems.Sum(m => m.Credit).FixNumber()
+                                            }
+                                        </td>
+                                        <td class="action print-hide text-end">
+                                            <div class="btn-group">
+                                                <a class="btn btn-sm btn-warning px-4 py-2 rounded" asp-page="/Accounts/Vouchers/Edit" asp-route-id="@item.Id">Edit</a>
+
+                                                @* <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                                <button type="submit" class="btn btn-sm btn-danger px-3 py-2 rounded">Delete</button>
+                                            </form> *@
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function pop_print() {
+            var style = `.table thead tr th div { height: auto !important; }`;
+            pop_print_generic('.print-header', '.card-body .table-parent', style);
+        }
+    </script>
+    @* <partial name="~/Pages/Shared/_Partial/_Print.cshtml" />
+    <partial name="~/Pages/Shared/Datatable/DtBasic.cshtml" /> *@
+}

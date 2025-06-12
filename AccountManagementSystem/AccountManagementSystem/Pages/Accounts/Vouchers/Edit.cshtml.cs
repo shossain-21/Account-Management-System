@@ -76,7 +76,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                 AllSubsidiaries.Add(new SelectListItem
                 {
                     Value = subData.Id.ToString(), 
-                    Text = subData.Name
+                    Text = subData.Code + " " + subData.Name
                 });
             }
 
@@ -197,5 +197,19 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                 return new JsonResult(false);
             }
         }
+
+        public async Task<JsonResult> OnGetSubsidiariesByControlIdAsync(int controlId)
+        {
+            var controlIdParam = new SqlParameter("@ControlId", controlId);
+
+            var filteredSubsidiaries = _context.AspNetSubSidiaries
+                .FromSqlRaw("EXEC spGetSubSidiariesByControlId @ControlId", controlIdParam)
+                .AsEnumerable()
+                .Select(s => new { id = s.Id, name = s.Name })
+                .ToList();
+
+            return new JsonResult(filteredSubsidiaries);
+        }
+
     }
 }

@@ -91,41 +91,19 @@
         $("#submitForm").on('click', function () {
             var voucherNo = $('#Voucher_VoucherNo').val();
             var voucherDate = $('[name="Voucher.VoucherDate"]').val();
+            var title = $('[name="Voucher.Title"]').val();
             if (voucherNo == "") {
                 errorNotify("Please type a reference No.");
             }
             else if (voucherDate == "") {
                 errorNotify("Please select a voucher date.");
             }
+            else if (title == "") {
+                successNotify("Please enter a title.");
+            }
             else {
                 $("#mainForm").submit();
             }
-        });
-
-        function initializeAutocomplete(searchFieldCode, inputElementId) {
-            $("#" + inputElementId).autocomplete({
-                source: function (request, response) {
-                    makeAjaxCall('@Url.Page("/CommonAjaxCalls/MathHelperAjax", "GetHistory")', {
-                        term: request.term,
-                        field: searchFieldCode
-                    }, function (success, data) {
-                        if (success) {
-                            response($.map(data, function (item) {
-                                return item;
-                            }));
-                        } else {
-                            errorNotify();
-                        }
-                    });
-                },
-                minLength: 0
-            }).on('focus', function () {
-                $(this).autocomplete("search", $(this).val());
-            });
-        }
-
-        $(document).ready(function () {
-            initializeAutocomplete(1, "Voucher_Title");
         });
     </script>
 }

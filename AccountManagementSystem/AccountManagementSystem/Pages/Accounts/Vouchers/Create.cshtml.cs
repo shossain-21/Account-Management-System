@@ -38,11 +38,11 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
         public async Task<IActionResult> OnPostAsync()
         {
-             if (!ModelState.IsValid)
-            {
-                Voucher.VoucherTypeName = _voucherHelper.GetVoucherTypeName(Voucher.VoucherTypeId);
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    Voucher.VoucherTypeName = _voucherHelper.GetVoucherTypeName(Voucher.VoucherTypeId);
+            //    return Page();
+            //}
 
             var chequeDateValue = Voucher.ChequeDate == DateTime.MinValue ? (object)DBNull.Value : Voucher.ChequeDate;
             var voucherDateValue = Voucher.VoucherDate == DateTime.MinValue ? (object)DBNull.Value : Voucher.VoucherDate;
