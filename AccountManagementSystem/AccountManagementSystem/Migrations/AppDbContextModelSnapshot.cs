@@ -40,7 +40,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AspNetControls", (string)null);
+                    b.ToTable("AspNetControls");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.SubSidiary", b =>
@@ -72,7 +72,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasIndex("ControlId");
 
-                    b.ToTable("AspNetSubSidiaries", (string)null);
+                    b.ToTable("AspNetSubSidiaries");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.Voucher", b =>
@@ -108,7 +108,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AspNetVouchers", (string)null);
+                    b.ToTable("AspNetVouchers");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Accounts.VoucherItem", b =>
@@ -145,7 +145,7 @@ namespace AccountManagementSystem.Migrations
 
                     b.HasIndex("VoucherId");
 
-                    b.ToTable("AspNetVoucherItems", (string)null);
+                    b.ToTable("AspNetVoucherItems");
                 });
 
             modelBuilder.Entity("AccountManagementSystem.Models.Users.AccountUser", b =>

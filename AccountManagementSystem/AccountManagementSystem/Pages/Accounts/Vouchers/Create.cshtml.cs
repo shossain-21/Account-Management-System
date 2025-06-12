@@ -69,7 +69,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
             int insertedId = (int)insertedIdParam.Value;
 
             // Redirect to Edit page
-            return RedirectToPage("Accounts/Vouchers/Edit", new { id = Voucher.Id });
+            return RedirectToPage("./Edit", new { id = insertedId });
         }
 
 
