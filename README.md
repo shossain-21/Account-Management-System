@@ -50,11 +50,12 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ![Login Page (Sample Image)](screenshots/JV-Drop.png)
 ![Login Page (Sample Image)](screenshots/COA-Drop.png)
 ![Login Page (Sample Image)](screenshots/User-Drop.png)
-### Register Page
-![Login Page (Sample Image)](screenshots/login-page.jpg)
 
 ### Login Page
-![Login Page (Sample Image)](screenshots/login-page.jpg)
+![Login Page (Sample Image)](screenshots/Login-Page.jpg)
+
+### Register Page
+![Login Page (Sample Image)](screenshots/Register-Page.jpg)
 
 ### Chart of Accounts
 ![COA (Sample Image)](screenshots/chart-of-accounts-page.png)
