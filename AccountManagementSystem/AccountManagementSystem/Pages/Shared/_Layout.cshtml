@@ -35,7 +35,7 @@
                             if (User.IsInRole("admin"))@* ------------------------ADMIN ZONE------------------------ *@
                             {
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Cash Voucher</span></a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Payment Voucher</span></a>
                                     <ul class="dropdown-menu">
                                         <!-- Cash Payment Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Cash Payment</h6></li>
@@ -44,19 +44,20 @@
 
                                         <li><hr class="dropdown-divider" /></li>
 
-                                        <!-- Cash Receive Section -->
-                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li>
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-university me-2"></i><span>Cheque Voucher</span></a>
-                                    <ul class="dropdown-menu">
                                         <!-- Bank Payment Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Bank Payment</h6></li>
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="4">Add Bank Payment</a></li>
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="4">View Bank Payment</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-file-invoice-dollar me-2"></i><span>Receipt Voucher</span></a>
+                                    <ul class="dropdown-menu">
+                                        <!-- Cash Receive Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
+
 
                                         <li><hr class="dropdown-divider" /></li>
 
@@ -103,14 +104,14 @@
                             }
                             else if (User.IsInRole("accountant")) @* ------------------------ACCOUNTANT ZONE------------------------ *@
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                                </li>
+                                @*<li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                    </li>*@
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Cash Voucher</span></a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Payment Voucher</span></a>
                                     <ul class="dropdown-menu">
                                         <!-- Cash Payment Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Cash Payment</h6></li>
@@ -119,19 +120,20 @@
 
                                         <li><hr class="dropdown-divider" /></li>
 
-                                        <!-- Cash Receive Section -->
-                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li>
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-university me-2"></i><span>Cheque Voucher</span></a>
-                                    <ul class="dropdown-menu">
+
                                         <!-- Bank Payment Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Bank Payment</h6></li>
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="4">Add Bank Payment</a></li>
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="4">View Bank Payment</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-file-invoice-dollar me-2"></i><span>Receipt Voucher</span></a>
+                                    <ul class="dropdown-menu">
+                                        <!-- Cash Receive Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
 
                                         <li><hr class="dropdown-divider" /></li>
 
@@ -171,48 +173,45 @@
                             }
                             else if (User.IsInRole("viewer")) @* ------------------------VIEWER ZONE------------------------ *@
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                                </li>
+                                @*<li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                    </li>*@
+
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>Cash Voucher</span></a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-money-bill me-2"></i><span>View Payment Vouchers</span></a>
                                     <ul class="dropdown-menu">
                                         <!-- Cash Payment Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Cash Payment</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="2">Add Cash Payment</a></li> *@
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="2">View Cash Payment</a></li>
 
                                         <li><hr class="dropdown-divider" /></li>
 
-                                        <!-- Cash Receive Section -->
-                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="3">Add Cash Receive</a></li> *@
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
+
+                                        <!-- Bank Payment Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Bank Payment</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="4">View Bank Payment</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-university me-2"></i><span>Cheque Voucher</span></a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-file-invoice-dollar me-2"></i><span>View Receipt Vouchers</span></a>
                                     <ul class="dropdown-menu">
-                                        <!-- Bank Payment Section -->
-                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-up-to-line me-2"></i>Bank Payment</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="4">Add Bank Payment</a></li> *@
-                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="4">View Bank Payment</a></li>
+                                        <!-- Cash Receive Section -->
+                                        <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Cash Receive</h6></li>
+                                        <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="3">View Cash Receive</a></li>
 
                                         <li><hr class="dropdown-divider" /></li>
 
                                         <!-- Bank Receive Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-arrow-down-to-line me-2"></i>Bank Receive</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="5">Add Bank Receive</a></li> *@
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="5">View Bank Receive</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-receipt me-2"></i><span>Journal Voucher</span></a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fas fa-receipt me-2"></i><span>Journal Vouchers</span></a>
                                     <ul class="dropdown-menu">
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Create" asp-route-id="1">Add Journal Voucher</a></li> *@
                                         <li><a class="dropdown-item" asp-page="/Accounts/Vouchers/Index" asp-route-id="1">View Journal Vouchers</a></li>
                                     </ul>
                                 </li>
@@ -224,14 +223,12 @@
 
                                         <!-- Control Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-grid-2 me-2"></i>Control</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/Controls/Create">Add Control</a></li> *@
                                         <li><a class="dropdown-item" asp-page="/Accounts/Controls/Index">View Controls</a></li>
 
                                         <li><hr class="dropdown-divider" /></li>
 
                                         <!-- Sub-Sidiary Section -->
                                         <li><h6 class="dropdown-header"><i class="far fa-grid me-2"></i>Sub-Sidiary</h6></li>
-                                        @* <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Create">Add Sub-Sidiary</a></li> *@
                                         <li><a class="dropdown-item" asp-page="/Accounts/SubSidiaries/Index">View Sub-Sidiaries</a></li>
 
                                     </ul>

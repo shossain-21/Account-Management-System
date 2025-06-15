@@ -25,8 +25,6 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
         [BindProperty]
         public Voucher Voucher { get; set; } = new Voucher();
-        [BindProperty]
-        public VoucherItem VoucherItem { get; set; } = new VoucherItem();
 
         public required List<VoucherItem> VoucherItems { get; set; }
 
@@ -48,21 +46,14 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                     .FromSqlRaw("EXEC spGetVouchersByVoucherTypeId @VoucherTypeId", voucherTypeIdParam)
                     .ToListAsync();
 
-            VoucherItems = new List<VoucherItem>();
-
             foreach (var voucher in Vouchers)
             {
                 var voucherIdParam = new SqlParameter("@VoucherId", voucher.Id);
-                var items = await _context.AspNetVoucherItems
+                var voucherItems = await _context.AspNetVoucherItems
                     .FromSqlRaw("EXEC spGetVoucherItemsByVoucherId @VoucherId", voucherIdParam)
                     .ToListAsync();
 
-                foreach (var item in items)
-                {
-                    item.Voucher = voucher;
-                }
-
-                VoucherItems.AddRange(items);
+                voucher.VoucherItems = voucherItems;
             }
 
             return Page();

@@ -1,0 +1,185 @@
+﻿@page
+@model AccountManagementSystem.Pages.Accounts.Vouchers.Export2ExcelModel
+
+<table id="myTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Serial No.</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price (USD)</th>
+            <th>Stock Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Wireless Ergonomic Mouse</td>
+            <td>Electronics</td>
+            <td>25.99</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Organic Green Tea (50 bags)</td>
+            <td>Food & Beverage</td>
+            <td>8.50</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Stainless Steel Water Bottle</td>
+            <td>Home Goods</td>
+            <td>15.00</td>
+            <td>220</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Noise-Cancelling Headphones</td>
+            <td>Electronics</td>
+            <td>120.00</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Yoga Mat (Thick, Non-slip)</td>
+            <td>Sports & Outdoors</td>
+            <td>35.50</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Set of 3 Scented Candles</td>
+            <td>Home Decor</td>
+            <td>18.75</td>
+            <td>180</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>USB-C to HDMI Adapter</td>
+            <td>Electronics</td>
+            <td>12.99</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Kids' Science Experiment Kit</td>
+            <td>Toys & Games</td>
+            <td>29.99</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Gourmet Coffee Beans (250g)</td>
+            <td>Food & Beverage</td>
+            <td>14.25</td>
+            <td>160</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Portable Bluetooth Speaker</td>
+            <td>Electronics</td>
+            <td>45.00</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Gardening Tool Set (5-piece)</td>
+            <td>Garden & Outdoor</td>
+            <td>22.00</td>
+            <td>130</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Classic Novel Collection</td>
+            <td>Books</td>
+            <td>55.00</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Reusable Produce Bags (Set of 6)</td>
+            <td>Eco-Friendly</td>
+            <td>9.99</td>
+            <td>280</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Durable Dog Leash</td>
+            <td>Pet Supplies</td>
+            <td>11.50</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Art Drawing Pencils Set (48 colors)</td>
+            <td>Arts & Crafts</td>
+            <td>20.00</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Smartphone Tripod with Remote</td>
+            <td>Photography</td>
+            <td>19.99</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Digital Kitchen Scale</td>
+            <td>Kitchenware</td>
+            <td>28.00</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Baby Learning Walker</td>
+            <td>Baby Products</td>
+            <td>65.00</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Microfiber Cleaning Cloths (10-pack)</td>
+            <td>Cleaning Supplies</td>
+            <td>7.50</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td class="bg-danger">20</td>
+            <td class="fw-bold">Travel Backpack (Waterproof)</td>
+            <td class="text-end">Luggage & Travel</td>
+            <td>75.00</td>
+            <td>50</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center">
+    <button id="btnExport" class="btn btn-primary btn-sm">Export</button>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/lib/export/FileSaver.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/lib/export/xlsx.core.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/lib/export/tableExport.min.js"></script>
+    <script type="text/javascript">
+        $("#btnExport").click(function () {
+            $('#myTable').tableExport({
+                type: 'xls',
+                fileName: 'ExportedData',
+                mso: {
+                    styles: [
+                        'background-color',
+                        'color',
+                        'font-size',
+                        'font-weight',
+                        'text-align',
+                        'border',
+                    ]
+                }
+            });
+        });
+    </script>
+}

@@ -44,18 +44,27 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ## Screenshots & UI Overview
 
 ### Landing Page
-![Login Page (Sample Image)](screenshots/Landing-Page.png)
-![Login Page (Sample Image)](screenshots/Cash-Voucher-Drop.png)
-![Login Page (Sample Image)](screenshots/Cheque-Voucher-Drop.png)
-![Login Page (Sample Image)](screenshots/JV-Drop.png)
-![Login Page (Sample Image)](screenshots/COA-Drop.png)
-![Login Page (Sample Image)](screenshots/User-Drop.png)
+#### ADMIN
+![Landing Page (Sample Image)](screenshots/Admin-Landing-Page.png)
+![Payment Voucher (Sample Image)](screenshots/Admin-Payment-Voucher.png)
+![Receipt Voucher (Sample Image)](screenshots/Admin-Receipt-Voucher.png)
+![Journal Voucher (Sample Image)](screenshots/Admin-Journal-Voucher.png)
+![Chat of Accounts (Sample Image)](screenshots/Admin-COA.png)
+![User Settings (Sample Image)](screenshots/Admin-UserSettings.png)
+
+#### Accountant
+![Login Page (Sample Image)](screenshots/Login-Page.png)
+
+#### Viewer
+![Login Page (Sample Image)](screenshots/Login-Page.png)
 
 ### Login Page
 ![Login Page (Sample Image)](screenshots/Login-Page.png)
 
 ### Register Page
 ![Login Page (Sample Image)](screenshots/Register-Page.png)
+
+
 
 ### Cash Payment Voucher
 #### Create Page
@@ -66,6 +75,42 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 
 #### Index Page
 ![Login Page (Sample Image)](screenshots/Cash-Pay-Index.png)
+
+
+
+### Cash Receipt Voucher
+#### Create Page
+![Login Page (Sample Image)](screenshots/Cash-Rcv-Create.png)
+
+#### Edit Page
+![Login Page (Sample Image)](screenshots/Cash-Rcv-Edit.png)
+
+#### Index Page
+![Login Page (Sample Image)](screenshots/Cash-Rcv-Index.png)
+
+
+
+### Bank Payment Voucher
+#### Create Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Create.png)
+
+#### Edit Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Edit.png)
+
+#### Index Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Index.png)
+
+
+
+### Bank Receipt Voucher
+#### Create Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Create.png)
+
+#### Edit Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Edit.png)
+
+#### Index Page
+![Login Page (Sample Image)](screenshots/Bank-Pay-Index.png)
 
 ### Chart of Accounts
 ![COA (Sample Image)](screenshots/chart-of-accounts-page.png)

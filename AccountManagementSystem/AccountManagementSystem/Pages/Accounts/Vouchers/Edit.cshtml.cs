@@ -108,10 +108,10 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
                 });
             }
 
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
@@ -164,7 +164,7 @@ namespace AccountManagementSystem.Pages.Accounts.Vouchers
 
                 await transaction.CommitAsync();
 
-                return RedirectToPage("./Edit", new { id = Voucher.Id });
+                return RedirectToPage("./Index", new { id = Voucher.Id });
             }
             catch (DbUpdateException ex)
             {
