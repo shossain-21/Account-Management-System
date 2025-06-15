@@ -43,9 +43,15 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 
 ## Screenshots & UI Overview
 
+### Login Page
+![Login Page (Sample Image)](screenshots/Login-Page.png)
+
+### Register Page
+![Login Page (Sample Image)](screenshots/Register-Page.png)
+
 ### Landing Page
 #### ADMIN
-![Landing Page (Sample Image)](screenshots/Admin-Landing-Page.png)
+![Admin Landing Page (Sample Image)](screenshots/Admin-Landing-Page.png)
 ![Payment Voucher (Sample Image)](screenshots/Admin-Payment-Voucher.png)
 ![Receipt Voucher (Sample Image)](screenshots/Admin-Receipt-Voucher.png)
 ![Journal Voucher (Sample Image)](screenshots/Admin-Journal-Voucher.png)
@@ -53,64 +59,57 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ![User Settings (Sample Image)](screenshots/Admin-UserSettings.png)
 
 #### Accountant
-![Login Page (Sample Image)](screenshots/Login-Page.png)
+![Accountant Landing Page (Sample Image)](screenshots/Acc-Landing-Page.png)
 
 #### Viewer
-![Login Page (Sample Image)](screenshots/Login-Page.png)
-
-### Login Page
-![Login Page (Sample Image)](screenshots/Login-Page.png)
-
-### Register Page
-![Login Page (Sample Image)](screenshots/Register-Page.png)
+![Viewer Landing Page (Sample Image)](screenshots/Viewer-Landing-Page.png)
 
 
+### Payment Voucher
+#### Add Cash Payment
+![Add Cash Payment (Sample Image)](screenshots/Cash-Pay-Create.png)
 
-### Cash Payment Voucher
-#### Create Page
-![Login Page (Sample Image)](screenshots/Cash-Pay-Create.png)
+![Edit Cash Payment (Sample Image)](screenshots/Cash-Pay-Edit.png)
 
-#### Edit Page
-![Login Page (Sample Image)](screenshots/Cash-Pay-Edit.png)
+#### View Cash Payment
+![View Cash Payment (Sample Image)](screenshots/Cash-Pay-Index.png)
 
-#### Index Page
-![Login Page (Sample Image)](screenshots/Cash-Pay-Index.png)
+#### Add Bank Payment
+![Add Bank Payment (Sample Image)](screenshots/Bank-Pay-Create.png)
 
+![Edit Bank Payment (Sample Image)](screenshots/Bank-Pay-Edit.png)
 
-
-### Cash Receipt Voucher
-#### Create Page
-![Login Page (Sample Image)](screenshots/Cash-Rcv-Create.png)
-
-#### Edit Page
-![Login Page (Sample Image)](screenshots/Cash-Rcv-Edit.png)
-
-#### Index Page
-![Login Page (Sample Image)](screenshots/Cash-Rcv-Index.png)
+#### View Bank Payment
+![View Bank Payment (Sample Image)](screenshots/Bank-Pay-Index.png)
 
 
 
-### Bank Payment Voucher
-#### Create Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Create.png)
+### Receipt Voucher
+#### Add Cash Receipt
+![Add Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Create.png)
 
-#### Edit Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Edit.png)
+![Edit Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Edit.png)
 
-#### Index Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Index.png)
+#### View Cash Receipt
+![View Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Index.png)
+
+#### Add Bank Receipt
+![Add Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Create.png)
+
+![Edit Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Edit.png)
+
+#### View Bank Receipt
+![View Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Index.png)
 
 
+### Journal Voucher
+#### Add Journal Voucher
+![Add Journal Voucher (Sample Image)](screenshots/JV-Create.png)
 
-### Bank Receipt Voucher
-#### Create Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Create.png)
+![Edit Journal Voucher (Sample Image)](screenshots/JV-Edit.png)
 
-#### Edit Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Edit.png)
-
-#### Index Page
-![Login Page (Sample Image)](screenshots/Bank-Pay-Index.png)
+#### View Journal Voucher
+![View Journal Voucher (Sample Image)](screenshots/JV-Index.png)
 
 ### Chart of Accounts
 ![COA (Sample Image)](screenshots/chart-of-accounts-page.png)
