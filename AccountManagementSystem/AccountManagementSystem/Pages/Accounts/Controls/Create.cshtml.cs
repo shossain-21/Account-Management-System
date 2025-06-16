@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Threading.Tasks;
-using AccountManagementSystem.Services;
-using AccountManagementSystem.Models.Accounts;
 using Microsoft.Data.SqlClient;
+using AccountManagementSystem.Models.Accounts;
+using AccountManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagementSystem.Pages.Accounts.Controls
@@ -17,12 +16,19 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
             _context = context;
         }
 
-        public IActionResult OnGet() => Page();
+        [BindProperty]
+        public Control Control { get; set; } = new();
+
+        public void OnGet()
+        {
+        }
 
         public async Task<IActionResult> OnPost()
         {
-            if (!ModelState.IsValid)
-                return Page();
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
             var codeParam = new SqlParameter("@Code", Control.Code);
             var nameParam = new SqlParameter("@Name", Control.Name);
@@ -31,8 +37,5 @@ namespace AccountManagementSystem.Pages.Accounts.Controls
 
             return RedirectToPage("/Accounts/Controls/Index");
         }
-
-        [BindProperty]
-        public required Control Control { get; set; }
     }
 }

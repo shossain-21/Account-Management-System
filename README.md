@@ -44,75 +44,97 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ## Screenshots & UI Overview
 
 ### Login Page
-![Login Page (Sample Image)](screenshots/Login-Page.png)
+![Login Page](screenshots/Login-Page.png)
 
 ### Register Page
-![Login Page (Sample Image)](screenshots/Register-Page.png)
+![Login Page](screenshots/Register-Page.png)
+
 
 ### Landing Page
 #### ADMIN
-![Admin Landing Page (Sample Image)](screenshots/Admin-Landing-Page.png)
-![Payment Voucher (Sample Image)](screenshots/Admin-Payment-Voucher.png)
-![Receipt Voucher (Sample Image)](screenshots/Admin-Receipt-Voucher.png)
-![Journal Voucher (Sample Image)](screenshots/Admin-Journal-Voucher.png)
-![Chat of Accounts (Sample Image)](screenshots/Admin-COA.png)
-![User Settings (Sample Image)](screenshots/Admin-UserSettings.png)
+![Admin Landing Page](screenshots/Admin-Landing-Page.png)
+![Payment Voucher](screenshots/Admin-Payment-Voucher.png)
+![Receipt Voucher](screenshots/Admin-Receipt-Voucher.png)
+![Journal Voucher](screenshots/Admin-Journal-Voucher.png)
+![Chat of Accounts](screenshots/Admin-COA.png)
+![User Settings](screenshots/Admin-UserSettings.png)
 
 #### Accountant
-![Accountant Landing Page (Sample Image)](screenshots/Acc-Landing-Page.png)
+![Accountant Landing Page](screenshots/Acc-Landing-Page.png)
 
 #### Viewer
-![Viewer Landing Page (Sample Image)](screenshots/Viewer-Landing-Page.png)
+![Viewer Landing Page](screenshots/Viewer-Landing-Page.png)
+
 
 
 ### Payment Voucher
 #### Add Cash Payment
-![Add Cash Payment (Sample Image)](screenshots/Cash-Pay-Create.png)
+![Add Cash Payment](screenshots/Cash-Pay-Create.png)
 
-![Edit Cash Payment (Sample Image)](screenshots/Cash-Pay-Edit.png)
+![Edit Cash Payment](screenshots/Cash-Pay-Edit.png)
 
 #### View Cash Payment
-![View Cash Payment (Sample Image)](screenshots/Cash-Pay-Index.png)
+![View Cash Payment](screenshots/Cash-Pay-Index.png)
 
 #### Add Bank Payment
-![Add Bank Payment (Sample Image)](screenshots/Bank-Pay-Create.png)
+![Add Bank Payment](screenshots/Bank-Pay-Create.png)
 
-![Edit Bank Payment (Sample Image)](screenshots/Bank-Pay-Edit.png)
+![Edit Bank Payment](screenshots/Bank-Pay-Edit.png)
 
 #### View Bank Payment
-![View Bank Payment (Sample Image)](screenshots/Bank-Pay-Index.png)
+![View Bank Payment](screenshots/Bank-Pay-Index.png)
 
 
 
 ### Receipt Voucher
 #### Add Cash Receipt
-![Add Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Create.png)
+![Add Cash Receipt](screenshots/Cash-Rcv-Create.png)
 
-![Edit Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Edit.png)
+![Edit Cash Receipt](screenshots/Cash-Rcv-Edit.png)
 
 #### View Cash Receipt
-![View Cash Receipt (Sample Image)](screenshots/Cash-Rcv-Index.png)
+![View Cash Receipt](screenshots/Cash-Rcv-Index.png)
 
 #### Add Bank Receipt
-![Add Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Create.png)
+![Add Bank Receipt](screenshots/Bank-Rcv-Create.png)
 
-![Edit Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Edit.png)
+![Edit Bank Receipt](screenshots/Bank-Rcv-Edit.png)
 
 #### View Bank Receipt
-![View Bank Receipt (Sample Image)](screenshots/Bank-Rcv-Index.png)
+![View Bank Receipt](screenshots/Bank-Rcv-Index.png)
+
 
 
 ### Journal Voucher
 #### Add Journal Voucher
-![Add Journal Voucher (Sample Image)](screenshots/JV-Create.png)
+![Add Journal Voucher](screenshots/JV-Create.png)
 
-![Edit Journal Voucher (Sample Image)](screenshots/JV-Edit.png)
+![Edit Journal Voucher](screenshots/JV-Edit.png)
 
 #### View Journal Voucher
-![View Journal Voucher (Sample Image)](screenshots/JV-Index.png)
+![View Journal Voucher](screenshots/JV-Index.png)
+
+
 
 ### Chart of Accounts
-![COA (Sample Image)](screenshots/chart-of-accounts-page.png)
+#### Add Control 
+![Add Control](screenshots/COA-Control-Create.png)
 
-### Voucher Entry
-![Voucher Entry (Sample Image)](screenshots/voucher-entry-page.png)
+#### View Controls
+![Voucher Entry](screenshots/COA-Control-Index.png)
+
+#### Add Sub-Sidiary
+![Voucher Entry](screenshots/COA-SubSidiary-Create.png)
+
+#### View Sub-Sidiary
+![Voucher Entry](screenshots/COA-SubSidiary-Create.png)
+
+
+
+### Export Report 
+![Export to Excel](screenshots/Export1.png)
+
+#### File Name (Voucher Type Name + Date_Time).xlsx
+![Export to Excel](screenshots/Export2.png)
+
+![Export to Excel](screenshots/Export3.png)
