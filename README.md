@@ -125,7 +125,7 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 ![Voucher Entry](screenshots/COA-SubSidiary-Create.png)
 
 #### View Sub-Sidiary
-![Voucher Entry](screenshots/COA-SubSidiary-Create.png)
+![Voucher Entry](screenshots/COA-SubSidiary-Index.png)
 
 
 ### User Settings
