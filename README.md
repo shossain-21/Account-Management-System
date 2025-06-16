@@ -10,16 +10,14 @@ While it looked scary at first, I took it as a chance to dive deep into how web 
 
 ## The Challenges I Faced
 
-Coming from a competitive programming and C# background, I had little to no exposure to Razor Pages or stored procedures. I didn’t know how to structure pages, handle user roles, or even build forms that talk to SQL. 
-
-Honestly, I felt lost at first — but I started breaking the problem down one piece at a time.
+Coming from a competitive programming and C# background, I had little to no exposure to Razor Pages or stored procedures. Previously, I had worked with Entity Framework, ADO.NET + LINQ and had some basic knowledge of the .NET Core MVC framework. Working with Razor Pages and Stored Procedures — both being new to me — was initially challenging, but it pushed me to understand deeper aspects of request handling, server-side rendering, and direct database interaction using parameterized queries. Over time, I became comfortable with defining and executing stored procedures, binding data to Razor Pages, and organizing logic in a cleaner, more maintainable way. This experience has significantly expanded my understanding of full-stack development within the .NET ecosystem.
 
 ## My Approach
 
 Instead of rushing, I focused on building one feature at a time:
 
 1. **Authentication & Roles** — using ASP.NET Identity and custom roles (Admin, Accountant, Viewer).
-2. **Chart of Accounts** — created a dynamic account system using a stored procedure and ADO.NET.
+2. **Chart of Accounts** — created a dynamic account system using stored procedures (spCreateControl, spCreateSubSidiary) and ADO.NET.
 3. **Voucher Module** — built forms to save journal/payment/receipt vouchers in multi-line format.
 4. **No LINQ** — all data access is raw ADO.NET with `SqlConnection`, `SqlCommand`, and stored procedures.
 
@@ -31,7 +29,7 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 - User Roles: Admin, Accountant, Viewer — with custom access.
 - Chart of Accounts: Hierarchical parent-child account structure.
 - Voucher Entry: Journal, Payment, and Receipt voucher support.
-- Stored Procedure Only: No LINQ.
+- Stored Procedure Only: With ADO.Net and No LINQ.
 
 
 ## Primary Technologies Used
@@ -128,6 +126,14 @@ Each step was a learning moment, especially wiring dropdowns to SQL and looping 
 
 #### View Sub-Sidiary
 ![Voucher Entry](screenshots/COA-SubSidiary-Create.png)
+
+
+### User Settings
+#### Create User
+![Create User](screenshots/User-Create.png)
+
+#### View Users
+![View User](screenshots/User-Index.png)
 
 
 
